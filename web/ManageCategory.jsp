@@ -76,22 +76,22 @@
                         <div class="mb-3">
                         <label class="col-auto">Product Category</label>
                         <label for="category">Category*</label>
-                                        <select id="cars" name="category" class="form-control">
-                                            <option value="1">Locals</option>
-                                            <option value="2">Imports</option>
+                                        <select id="category" name="category" class="form-control">
+                                            <option value="1">Import</option>
+                                            <option value="2">Locals</option>
                                             <option value="3">Vegetables</option>
                                         </select>
                     </div>                        <div class="mb-3">
                         <label for="ProductName">Product Name*</label>
-                                        <select id="cars" name="ProductName" class="form-control">
-                                            <option value="Apple">Apple</option>
-                                            <option value="Banana">Banana</option>
-                                            <option value="Broccoli">Broccoli</option>
-                                            <option value="Cucumber">Cucumber</option>
-                                            <option value="Durian">Durian</option><!-- comment -->
-                                            <option value="Grape">Grape</option><!-- comment -->
-                                            <option value="Kiwi">Kiwi</option><!-- comment -->
-                                             <option value="Strawberry">Strawberry</option>
+                                        <select id="ProductName" name="ProductName" class="form-control">
+                                            <option value="1">Apple</option>
+                                            <option value="2">Banana</option>
+                                            <option value="3">Broccoli</option>
+                                            <option value="4">Cucumber</option>
+                                            <option value="5">Durian</option><!-- comment -->
+                                            <option value="6">Grape</option><!-- comment -->
+                                            <option value="7">Kiwi</option><!-- comment -->
+                                             <option value="8">Strawberry</option>
                                         </select>
                     </div>
             

@@ -23,26 +23,22 @@ import javax.servlet.http.Part;
  *
  * @author User
  */
-@WebServlet(urlPatterns = {"/FileUploadServlet"})
+@WebServlet(urlPatterns = {"/FileUploadServletAdmin2"})
 @MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2,
         maxFileSize = 1024 * 1024 * 10,
         maxRequestSize = 1024 * 1024 * 50)
 
-public class FileUploadServlet extends HttpServlet {
+public class FileUploadServletAdmin2 extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
           response.setContentType("text/html; charset=utf-8");
         PrintWriter out = response.getWriter();
-        String ProductName = request.getParameter("ProductName");
-        String Category = request.getParameter("Category");
-        String FarmName = request.getParameter("FarmName");
-       
-        String Price = request.getParameter("Price");
         
-        String Location = request.getParameter("Location");
-        String Experience=request.getParameter("Experience");
+        String category = request.getParameter("category");
+        String ProductName = request.getParameter("ProductName");
+   
         Part part = request.getPart("file");
         String fileName= extractFileName(part);
         String savePath = "C:\\Users\\User\\Desktop\\New Fyp Design\\FypBackend\\MyDusunBackEnd\\MyDususn.com\\web\\img" + File.separator + fileName;
@@ -54,15 +50,11 @@ public class FileUploadServlet extends HttpServlet {
         try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "admin");
-            PreparedStatement pst = con.prepareStatement("insert into trybackend (tree_id,cat_id,FarmName,Price,Location,Experience,filename,path) values (?,?,?,?,?,?,?,?)");
-            pst.setString(1, ProductName);
-            pst.setString(2, Category);
-            pst.setString(3, FarmName);
-            pst.setString(4, Price);
-            pst.setString(5, Location);
-            pst.setString(6, Experience);
-            pst.setString(7, fileName);
-            pst.setString(8, savePath);
+            PreparedStatement pst = con.prepareStatement("insert into tree2 (cat_id,ProductName,filename,path) values (?,?,?,?)");
+             pst.setString(1, category);
+            pst.setString(2, ProductName);
+            pst.setString(3, fileName);
+            pst.setString(4, savePath);
             pst.executeUpdate();
               response.setContentType("text/html; charset=utf-8");
              out.println("<script type=\"text/javascript\">");

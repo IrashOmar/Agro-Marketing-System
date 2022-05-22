@@ -53,7 +53,6 @@ public class FileUploadServletAdmin extends HttpServlet {
             PreparedStatement pst = con.prepareStatement("insert into tree (cat_id,ProductName,filename,path) values (?,?,?,?)");
              pst.setString(1, category);
             pst.setString(2, ProductName);
-           
             pst.setString(3, fileName);
             pst.setString(4, savePath);
             pst.executeUpdate();

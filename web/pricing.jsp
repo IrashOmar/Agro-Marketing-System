@@ -76,121 +76,69 @@
                     <div class="row">
                         <div class="col-lg-12"> 
                         </div>
-                                                    <%
-                   
+                                 <%
+           
             try {
-             String host = "jdbc:mysql://localhost:3306/hajah-rosnani";
+             String host = "jdbc:mysql://localhost:3306/test";
                         Connection conn = null;
                         Statement stat = null;
                         ResultSet res = null;
-                        
-                        String cat_id=request.getParameter("cat_id");
-                        if (cat_id.equalsIgnoreCase("")){
-                            cat_id="1";
-                
-            }
+                       String tree_id=request.getParameter("tree_id");
+                       if(tree_id.equalsIgnoreCase("")){
+                           tree_id="1";
+                       }
+                       
+                   
+                     
                         
                         Class.forName("com.mysql.jdbc.Driver");
                         conn = DriverManager.getConnection(host,"root","admin");
                         stat = conn.createStatement();
-                        String data = "select * from product where cat_id="+cat_id;
+                        String data = "select * from trybackend where tree_id="+tree_id;
                         res = stat.executeQuery(data);
                         while(res.next()){
                          String filename = res.getString("filename");
                   
                    %>
+         
                         <div class="col-lg-3">
+                            
                             <div class="pricing-box-item">
                                 <div class="pricing-heading">
-                                    <a href="about.html"><img src="img/pgFarmResize.jpg"></a>
+                                    <a href="about.html"> <image src="img/<%=filename%>"></a>
                                 </div>
                                 <div class="pricing-terms">
-                                    <h6>Penang Tropical Farm</h6>
+                                    <h6><%=res.getString("FarmName")%></h6>
                                 </div>
                                 <div class="pricing-container">
                                     <ul>
-                                        Price/Tree:<li><i class="icon-ok"></i>RM 150 </li>
-                                        Location : <li><i class="icon-ok"></i> Teluk Kumbar, Penang</li>
-                                        Category :<li><i class="icon-ok"></i> Import Fruits</li>
-                                        Farming Experience  :<li><i class="icon-ok"></i> 10 years</li>
+                                        Price/Tree:<li><i class="icon-ok"></i><%=res.getString("Price")%></li>
+                                        
+                                        Location : <li><i class="icon-ok"></i><%=res.getString("Location")%></li>
+                                        Farming Experience  :<li><i class="icon-ok"></i> <%=res.getString("Experience")%></li>
                                         <!-- <li><i class="icon-ok"></i> HTML5 CSS3 jQuery</li> -->
                                     </ul>
-                                </div>
+                           </div>
+      
                                 <div class="pricing-action">
-                                    <a href="#" class="btn btn-medium"><i class="icon-bolt"></i> Buy Now</a>
+                                    <a href="cart.jsp?id=<%=res.getString("id")%>" class="btn btn-medium"><i class="icon-bolt"></i> Buy Now</a>
                                 </div>
+      
                             </div>
                         </div>
-                        <div class="col-lg-3">
-                            <div class="pricing-box-item">
-                                <div class="pricing-heading">
-                                    <a href="about.html"><img src="img/pgFarmResize.jpg"></a>
-                                </div>
-                                <div class="pricing-terms">
-                                    <h6>Penang Tropical Farm</h6>
-                                </div>
-                                <div class="pricing-container">
-                                    <ul>
-                                        <li><i class="icon-ok"></i> Responsive Design</li>
-                                        <li><i class="icon-ok"></i> Bootstrap Design</li>
-                                        <li><i class="icon-ok"></i> Unlimited Support</li>
-                                        <li><i class="icon-ok"></i> Free Trial version</li>
-                                        <li><i class="icon-ok"></i> HTML5 CSS3 jQuery</li>
-                                    </ul>
-                                </div>
-                                <div class="pricing-action">
-                                    <a href="#" class="btn btn-medium"><i class="icon-bolt"></i> Get Now</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="pricing-box-item activeItem">
-                                <div class="pricing-heading">
-                                    <a href="about.html"><img src="img/pgFarmResize.jpg"></a>
-                                </div>
-                                <div class="pricing-terms">
-                                    <h6>Penang Tropical Farm</h6>
-                                </div>
-                                <div class="pricing-container">
-                                    <ul>
-                                        <li><i class="icon-ok"></i> Responsive Design</li>
-                                        <li><i class="icon-ok"></i> Bootstrap Design</li>
-                                        <li><i class="icon-ok"></i> Unlimited Support</li>
-                                        <li><i class="icon-ok"></i> Free Trial version</li>
-                                        <li><i class="icon-ok"></i> HTML5 CSS3 jQuery</li>
-                                    </ul>
-                                </div>
-                                <div class="pricing-action">
-                                    <a href="#" class="btn btn-medium"><i class="icon-bolt"></i> Get Now</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="pricing-box-item">
-                                <div class="pricing-heading">
-                                    <a href="about.html"><img src="img/pgFarmResize.jpg"></a>
-                                </div>
-                                <div class="pricing-terms">
-                                    <h6>Penang Tropical Farm</h6>
-                                </div>
-                                <div class="pricing-container">
-                                    <ul>
-                                        <li><i class="icon-ok"></i> Responsive Design</li>
-                                        <li><i class="icon-ok"></i> Bootstrap Design</li>
-                                        <li><i class="icon-ok"></i> Unlimited Support</li>
-                                        <li><i class="icon-ok"></i> Free Trial version</li>
-                                        <li><i class="icon-ok"></i> HTML5 CSS3 jQuery</li>
-                                    </ul>
-                                </div>
-
-                                <div class="pricing-action">
-                                    <a href="#" class="btn btn-medium"><i class="icon-bolt"></i> Get Now</a>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
+                                        
+               <%
+               }
+            } catch (NullPointerException e) {
+               System.out.println("Error at detail: " + e.getStackTrace().toString());
+               e.printStackTrace();
+            } 
+        %>
+            
+      
+              </div><!--
+         
+                      
 
                 </div>
             </section>

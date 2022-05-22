@@ -79,24 +79,35 @@
                             <div class="contact-form">
 
                                 <form method="post" action="FileUploadServlet" id="contactform" class="contact" enctype ="multipart/form-data">
-                                     <div class="form-group has-feedback">
-                                        <label for="FarmName"> Farm Name*</label>
-                                        <input type="text" class="form-control" name="FarmName" placeholder="">
-                                        <i class=" form-control-feedback"></i>
-                                    </div>
+                                  
                                       <div class="form-group has-feedback">
-                                        <label for="TreeName">Choose Your Tree*</label>
-                                        <select id="cars" name="TreeName" class="form-control">
-                                            <option value="Apple">Apple</option>
-                                            <option value="Banana">Banana</option>
-                                            <option value="Broccoli">Broccoli</option>
-                                            <option value="Cucumber">Cucumber</option>
-                                            <option value="Durian">Durian</option><!-- comment -->
-                                            <option value="Grape">Grape</option><!-- comment -->
-                                            <option value="Kiwi">Kiwi</option><!-- comment -->
-                                             <option value="Strawberry">Strawberry</option>
+                                        <label for="ProductName">Choose Your Tree*</label>
+                                        <select id="cars" name="ProductName" class="form-control">
+                                            <option value="1">Apple</option>
+                                            <option value="2">Banana</option>
+                                            <option value="3">Broccoli</option>
+                                            <option value="4">Cucumber</option>
+                                            <option value="5">Durian</option><!-- comment -->
+                                            <option value="6">Grape</option><!-- comment -->
+                                            <option value="7">Kiwi</option><!-- comment -->
+                                             <option value="8">Strawberry</option>
                                         </select>
                                         <!-- <input type="email" class="form-control" name="email" placeholder=""> -->
+                                        <i class=" form-control-feedback"></i>
+                                    </div>
+                                           <div class="form-group has-feedback">
+                                        <label for="Category">Category*</label>
+                                        <select id="cars" name="Category" class="form-control">
+                                            <option value="1">Locals</option>
+                                            <option value="2">Imports</option>
+                                            <option value="3">Vegetables</option>
+                                        </select>
+                                        <!-- <input type="email" class="form-control" name="email" placeholder=""> -->
+                                        <i class=" form-control-feedback"></i>
+                                    </div>
+                                       <div class="form-group has-feedback">
+                                        <label for="FarmName"> Farm Name*</label>
+                                        <input type="text" class="form-control" name="FarmName" placeholder="">
                                         <i class=" form-control-feedback"></i>
                                     </div>
                                     <div class="form-group has-feedback">
@@ -104,32 +115,29 @@
                                         <input type="text" class="form-control" name="Price" placeholder="">
                                         <i class=" form-control-feedback"></i>
                                     </div>
-                                    <div class="form-group has-feedback">
-                                        <label for="Category">Category*</label>
-                                        <select id="cars" name="Category" class="form-control">
-                                            <option value="Locals">Locals</option>
-                                            <option value="Imports">Imports</option>
-                                            <option value="Vegetables">Vegetables</option>
-                                        </select>
-                                        <!-- <input type="email" class="form-control" name="email" placeholder=""> -->
-                                        <i class=" form-control-feedback"></i>
-                                    </div>
+                             
                                     <div class="form-group has-feedback">
                                         <label for="Location"> Location*</label>
                                         <input type="text" class="form-control" name="Location" placeholder="">
                                         <i class=" form-control-feedback"></i>
                                     </div>
 
-                                    <div class="form-group has-feedback">
+<!--                                    <div class="form-group has-feedback">
                                         <label for="Details">Details</label>
                                         <textarea class="form-control" rows="6" name="Details" placeholder=""></textarea>
                                         <i class="fa fa-pencil form-control-feedback"></i>
+                                    </div>-->
+                                           <div class="form-group has-feedback">
+                                        <label for="Experience"> Farming Experience*</label>
+                                        <input type="text" class="form-control" name="Experience" placeholder="">
+                                        <i class=" form-control-feedback"></i>
                                     </div>
                                     <div class="form-group has-feedback">
                                         <label for="name"> Product Image*</label>
                                         <input type="file" class="form-control" name="file" placeholder="">
                                         <i class=" form-control-feedback"></i>
                                     </div>
+                               
 
                                     <input type="submit" value="Submit" id="submit" class="submit btn btn-default">
                                 </form>
