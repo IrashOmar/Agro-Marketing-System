@@ -52,7 +52,7 @@
                                 <li><a href="Category.html">Categories</a></li>
                                 <li class="active"><a href="services.html">Reading Section</a></li>
                                 <!-- <li><a href="portfolio.html">Categories</a></li> -->
-                                <li><a href="pricing.html">Available Farm</a></li>
+                                <li><a href="pricing.jsp">Available Farm</a></li>
                                 <li><a href="contact.html">Cart</a></li>
                             </ul>
                         </div>
@@ -84,12 +84,27 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
+                            <ul class="portfolio-categ">
+                                <li class="all active"><a href="#">All</a></li>
+                                <li class="web"><a href="Category2.jsp?cat_id=1" class="nav-link text-dark">Imports</a></li>
+                                <li class="icon"><a href="Category2.jsp?cat_id=2" class="nav-link text-dark">Locals</a></li>
+                                <li class="graphic"><a href="Category2.jsp?cat_id=3" class="nav-link text-dark">Vegetables</a></li>
+                            </ul>
+                        </div>
+<!--                         <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
                             <ul class="portfolio-categ filter">
                                 <li class="all active"><a href="#">All</a></li>
-                                <li class="web"><a href="#" value="1" title="">Imports</a></li>
-                                <li class="icon"><a href="#" value="2" title="">Locals</a></li>
-                                <li class="graphic"><a href="#" value="3" title="">Vegetables</a></li>
+                                <li class="web"><a href="#" title="">Imports</a></li>
+                                <li class="icon"><a href="#" title="">Locals</a></li>
+                                <li class="graphic"><a href="#" title="">Vegetables</a></li>
                             </ul>
+                            <div class="clearfix">
+                            </div>
+                        -->
+                        
+ 
 
                             <div class="clearfix">
                             </div>
@@ -125,7 +140,7 @@
                
                                         <li class="item-thumbs col-lg-3 design" data-id="id-0" data-type="web">
                                             <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                                            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Penang Tropical Farm" href="pricing.html">
+                                            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Penang Tropical Farm" href="pricing.jsp?tree_id=<%=res.getString("tree_id")%>">
                                                 <span class="overlay-img" ></span>
                                                 <span class="overlay-img-thumb"><i class="icon-info-blocks fa fa-search"></i></span> 
 
@@ -148,6 +163,9 @@
                       </li>      
                                  
                                 </section>
+        
+   <!-- comment -->
+        
 
 
                             </div>
