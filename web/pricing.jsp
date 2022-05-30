@@ -83,6 +83,7 @@
                         Connection conn = null;
                         Statement stat = null;
                         ResultSet res = null;
+                       String id = request.getParameter("id");
                        String tree_id=request.getParameter("tree_id");
                        if(tree_id.equalsIgnoreCase("")){
                            tree_id="1";
@@ -121,7 +122,7 @@
                            </div>
       
                                 <div class="pricing-action">
-                                    <a href="cart.jsp?id=<%=res.getString("id")%>" class="btn btn-medium"><i class="icon-bolt"></i> Buy Now</a>
+                                    <a href="pricingProcess.jsp?tree_id=<%=res.getString("tree_id")%>" class="btn btn-medium"><i class="icon-bolt"></i>Add To Cart</a>
                                 </div>
       
                             </div>
