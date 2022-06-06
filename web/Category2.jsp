@@ -49,11 +49,13 @@
                             <ul class="nav navbar-nav">
                                 <li class="active"><a href="index.html">Home</a></li> 
                                 <!-- <li><a href="about.html">Available</a></li> -->
-                                <li><a href="Category.html">Categories</a></li>
-                                <li class="active"><a href="services.html">Reading Section</a></li>
+                                <li><a href="Category2.jsp">Categories</a></li>
+                                <li class="active"><a href="ReadingSection.jsp">Reading Section</a></li>
                                 <!-- <li><a href="portfolio.html">Categories</a></li> -->
-                                <li><a href="pricing.jsp">Available Farm</a></li>
-                                <li><a href="contact.html">Cart</a></li>
+                                <li><a href="Feedback.jsp">Feedback</a></li>
+                                <li><a href="Cart3.jsp">Cart</a></li>
+                                 <li><a href="Feedback.html">Profile</a></li>
+
                             </ul>
                         </div>
                     </div>

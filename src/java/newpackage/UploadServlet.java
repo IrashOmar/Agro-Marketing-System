@@ -53,11 +53,12 @@ public class UploadServlet extends HttpServlet {
                 dir.mkdirs();
             }
             Part filePart = request.getPart("file");//Textbox value of name file.
+            String email = request.getParameter("email");//Textbox value of name lastname.
             String name = request.getParameter("name");//Textbox value of name name.
+            String password = request.getParameter("password");//Textbox value of name name.
             String ic = request.getParameter("ic");//Textbox value of name ic.
             String address = request.getParameter("address");//Textbox value of name address.
             String gender = request.getParameter("gender");//Textbox value of name lastname.
-            String email = request.getParameter("email");//Textbox value of name lastname.
             String phone = request.getParameter("phone");//Textbox value of name lastname.
             String fileName = filePart.getSubmittedFileName();
             String path = folderName + File.separator + fileName;
@@ -70,26 +71,28 @@ public class UploadServlet extends HttpServlet {
             try {
                 con = DB.getConnection();
                 System.out.println("connection done");
-                String sql = "insert into farmerregistration(name,ic,address,gender,email,phone,filename,path) values(?,?,?,?,?,?,?,?)";
+                String sql = "insert into farmerregistration(email,name,password,ic,address,gender,phone,filename,path) values(?,?,?,?,?,?,?,?,?)";
                 ps = con.prepareStatement(sql);
-                ps.setString(1, name);
-                ps.setString(2, ic);
-                ps.setString(3, address);
-                ps.setString(4, gender);
-                ps.setString(5, email);
-                ps.setString(6, phone);
-                ps.setString(7, fileName);
-                ps.setString(8, path);
-                
+                ps.setString(1, email);
+                ps.setString(2, name);
+                ps.setString(3, password);
+                ps.setString(4, ic);
+                ps.setString(5, address);
+                ps.setString(6, gender);
+                ps.setString(7, phone);
+                ps.setString(8, fileName);
+                ps.setString(9, path);
+
                 int status = ps.executeUpdate();
                 if (status > 0) {
                     session.setAttribute("fileName", fileName);
                     String msg = "" + fileName + " File uploaded successfully...";
                     request.setAttribute("msg", msg);
-                  //  RequestDispatcher rd = request.getRequestDispatcher("/success.jsp");
-                 //   rd.forward(request, response);
-                  //  System.out.println("File uploaded successfully...");
-                  //  System.out.println("Uploaded Path: " + uploadPath);
+                    
+                    //  RequestDispatcher rd = request.getRequestDispatcher("/success.jsp");
+                    //   rd.forward(request, response);
+                    //  System.out.println("File uploaded successfully...");
+                    //  System.out.println("Uploaded Path: " + uploadPath);
                 }
             } catch (SQLException e) {
                 out.println("Exception: " + e);

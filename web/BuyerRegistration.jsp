@@ -57,12 +57,24 @@ function CheckRole(val)
             <div class="card card-4">
                 <div class="card-body">
                     <h2 class="title">Buyer Registration</h2>
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form action="BuyerRegistrationProcess.jsp" method="post" enctype="">
                         <div class="row row-space">
+                              <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Email</label>
+                                    <input class="input--style-4" type="email" name="email">
+                                </div>
+                            </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Name</label>
                                     <input class="input--style-4" type="text" name="name">
+                                </div>
+                            </div>
+                                <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Password</label>
+                                    <input class="input--style-4" type="text" name="password">
                                 </div>
                             </div>
                             <div class="col-2">
@@ -97,12 +109,12 @@ function CheckRole(val)
                             </div>
                         </div>
                         <div class="row row-space">
-                            <div class="col-2">
+<!--                            <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Email</label>
                                     <input class="input--style-4" type="email" name="email">
                                 </div>
-                            </div>
+                            </div>-->
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Phone Number</label>

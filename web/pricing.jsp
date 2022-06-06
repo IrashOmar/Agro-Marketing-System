@@ -45,8 +45,10 @@
                                 <li><a href="Category2.jsp">Categories</a></li>
                                 <li class="active"><a href="services.html">Reading Section</a></li>
                                 <!-- <li><a href="portfolio.html">Categories</a></li> -->
-                                <li><a href="pricing.jsp">Available Farm</a></li>
-                                <li><a href="contact.html">Cart</a></li>
+                                <li><a href="Feedback.jsp">Feedback</a></li>
+                                <li><a href="Feedback.html">Cart</a></li>
+                                 <li><a href="Feedback.html">Profile</a></li>
+
                             </ul>
                         </div>
                     </div>

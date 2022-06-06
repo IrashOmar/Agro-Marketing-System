@@ -33,43 +33,40 @@ public class FileUploadServletAdmin extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-          response.setContentType("text/html; charset=utf-8");
+        response.setContentType("text/html; charset=utf-8");
         PrintWriter out = response.getWriter();
-        
+
         String category = request.getParameter("category");
         String ProductName = request.getParameter("ProductName");
-   
+
         Part part = request.getPart("file");
-        String fileName= extractFileName(part);
+        String fileName = extractFileName(part);
         String savePath = "C:\\Users\\User\\Desktop\\New Fyp Design\\FypBackend\\MyDusunBackEnd\\MyDususn.com\\web\\img" + File.separator + fileName;
         File fileSaveDir = new File(savePath);
-        
+
         part.write(savePath + File.separator);
-        
-        
-        try{
+
+        try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "admin");
             PreparedStatement pst = con.prepareStatement("insert into tree (cat_id,ProductName,filename,path) values (?,?,?,?)");
-             pst.setString(1, category);
+            pst.setString(1, category);
             pst.setString(2, ProductName);
             pst.setString(3, fileName);
             pst.setString(4, savePath);
             pst.executeUpdate();
-              response.setContentType("text/html; charset=utf-8");
-             out.println("<script type=\"text/javascript\">");
-                out.println("alert(\"New Post Added!!\")");
-               out.println("window.open('post.html','_self')");
-                out.println("</script >");;
-              
-               
-          
-        }catch (Exception e) {
+            response.setContentType("text/html; charset=utf-8");
+            out.println("<script type=\"text/javascript\">");
+            out.println("alert(\"New Post Added!!\")");
+            out.println("window.open('post.html','_self')");
+            out.println("</script >");;
+
+        } catch (Exception e) {
             out.println(e);
         }
 
-            
-        }
+    }
+
     private String extractFileName(Part part) {
         String contentDisp = part.getHeader("content-disposition");
         String[] items = contentDisp.split(";");
@@ -78,9 +75,6 @@ public class FileUploadServletAdmin extends HttpServlet {
                 return s.substring(s.indexOf("=") + 2, s.length() - 1);
             }
         }
-   return "";
+        return "";
     }
 }
-
-        
- 

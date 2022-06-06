@@ -18,7 +18,7 @@
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"> -->
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="admin.css">
+     <link href="admin.css" rel="stylesheet" />
 
     <!-- Font Awesome JS -->
     <!-- <script src="https://kit.fontawesome.com/1f0cb49d65.js" crossorigin="anonymous"></script> -->
@@ -34,7 +34,7 @@
 
         <nav id="sidebar">
             <div class="sidebar-header">
-                <img src="../img/HajahRosnani_Logo.png" alt="logo" width="150" class="mx-2">
+                <img src="" alt="logo" width="150" class="mx-2">
             </div>
 
             <ul class="list-unstyled components">
