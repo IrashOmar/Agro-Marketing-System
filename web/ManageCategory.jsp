@@ -38,20 +38,42 @@
             </div>
 
             <ul class="list-unstyled components">
-                <li class="active">
-                    <a href="#homeSubmenu" class="text">
-                        <i class="fas fa-cart-plus"></i>&nbsp&nbsp Create</a>
-                </li>
-
                 <li>
-                    <a href="edit.jsp">
-                        <i class="fas fa-edit"></i>&nbsp&nbspEdit</a>
-                </li>      <li>
-                    <a href="edit.jsp">
-                        <i class="fas fa-edit"></i>&nbsp&nbspNew</a>
-                </li>
+                        <a href="AdminProfileCard/dist/AdminProfileCard.jsp" class="text">
+                            <i class=""></i>&nbsp&nbsp Profile</a>
+                    </li>
 
-                
+                    <li>
+                        <a href="#" class="text">
+                            <i class="fas fa-edit"></i>&nbsp&nbsp Manage Profile</a>
+                    </li>
+                    <li>
+                        <a href="admin.jsp" class="text">
+                            <i class=""></i>&nbsp&nbsp Terms</a>
+                    </li>
+
+                    <li>
+                        <a href="edit.jsp" class="text">
+                            <i class="fas fa-edit"></i>&nbsp&nbsp Manage Terms</a>
+                    </li>
+                    <li class="active">
+                        <a href="ManageCategory.jsp" class="text">
+                            <i class=""></i>&nbsp&nbsp Category</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="text">
+                            <i class="fas fa-edit"></i>&nbsp&nbsp Manage Category</a>
+                    </li>
+                    <li>
+                        <a href="ManageReadingSection.jsp" class="text">
+                            <i class=""></i>&nbsp&nbsp Reading</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="text">
+                            <i class="fas fa-edit"></i>&nbsp&nbsp Manage Reading</a>
+                    </li>
 
               
             </ul>
@@ -74,7 +96,7 @@
                 <form method="post" action="FileUploadServletAdmin" id="contactform" class="contact" enctype ="multipart/form-data">
                   </div>
                         <div class="mb-3">
-                        <label class="col-auto">Product Category</label>
+                        <label class="col-auto">Product</label>
                         <label for="category">Category*</label>
                                         <select id="category" name="category" class="form-control">
                                             <option value="1">Import</option>

@@ -38,17 +38,41 @@
                 </div>
 
                 <ul class="list-unstyled components">
-                    <li class="active">
-                        <a href="#homeSubmenu" class="text">
-                            <i class="fas fa-cart-plus"></i>&nbsp&nbsp Create</a>
+                  <li>
+                        <a href="AdminProfileCard/dist/AdminProfileCard.jsp" class="text">
+                            <i class=""></i>&nbsp&nbsp Profile</a>
                     </li>
 
                     <li>
-                        <a href="edit.jsp">
-                            <i class="fas fa-edit"></i>&nbsp&nbspEdit</a>
-                    </li>      <li>
-                        <a href="edit.jsp">
-                            <i class="fas fa-edit"></i>&nbsp&nbspNew</a>
+                        <a href="#" class="text">
+                            <i class="fas fa-edit"></i>&nbsp&nbsp Manage Profile</a>
+                    </li>
+                    <li>
+                        <a href="admin.jsp" class="text">
+                            <i class=""></i>&nbsp&nbsp Terms</a>
+                    </li>
+
+                    <li>
+                        <a href="edit.jsp" class="text">
+                            <i class="fas fa-edit"></i>&nbsp&nbsp Manage Terms</a>
+                    </li>
+                    <li>
+                        <a href="ManageCategory.jsp" class="text">
+                            <i class=""></i>&nbsp&nbsp Category</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="text">
+                            <i class="fas fa-edit"></i>&nbsp&nbsp Manage Category</a>
+                    </li>
+                    <li  class="active">
+                        <a href="ManageReadingSection.jsp" class="text">
+                            <i class=""></i>&nbsp&nbsp Reading</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="text">
+                            <i class="fas fa-edit"></i>&nbsp&nbsp Manage Reading</a>
                     </li>
 
 

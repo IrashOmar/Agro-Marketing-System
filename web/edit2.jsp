@@ -45,16 +45,42 @@ pageEncoding="ISO-8859-1"%>
             </div>
 
             <ul class="list-unstyled components">
-                <li class="active">
-                    <a href="#homeSubmenu" class="text">
-                        <i class="fas fa-cart-plus"></i>&nbsp&nbspTerms and Regulations</a>
-                </li>
+               <li>
+                        <a href="AdminProfileCard/dist/AdminProfileCard.jsp" class="text">
+                            <i class=""></i>&nbsp&nbsp Profile</a>
+                    </li>
 
-                <li>
-                    <a href="edit.jsp">
-                        <i class="fas fa-edit"></i>&nbsp&nbspEdit</a>
-                </li>
+                    <li>
+                        <a href="#" class="text">
+                            <i class="fas fa-edit"></i>&nbsp&nbsp Manage Profile</a>
+                    </li>
+                    <li>
+                        <a href="admin.jsp" class="text">
+                            <i class=""></i>&nbsp&nbsp Terms</a>
+                    </li>
 
+                    <li class="active">
+                        <a href="edit.jsp" class="text">
+                            <i class="fas fa-edit"></i>&nbsp&nbsp Manage Terms</a>
+                    </li>
+                    <li>
+                        <a href="ManageCategory.jsp" class="text">
+                            <i class=""></i>&nbsp&nbsp Category</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="text">
+                            <i class="fas fa-edit"></i>&nbsp&nbsp Manage Category</a>
+                    </li>
+                    <li>
+                        <a href="ManageReadingSection.jsp" class="text">
+                            <i class=""></i>&nbsp&nbsp Reading</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="text">
+                            <i class="fas fa-edit"></i>&nbsp&nbsp Manage Reading</a>
+                    </li>
               
             </ul>
 
@@ -86,12 +112,12 @@ pageEncoding="ISO-8859-1"%>
                         
                     %>
                     <div class=" mb-3">
-                        <label class="col-auto"> Terms Id</label>
-                        <input name="Terms_Id" value='<%=res.getString("Terms_Id")%>' type="text" class="form-control" style="border-radius: 5px 5px 5px 5px;" required>
+                        <label class="col-auto"> Date</label>
+                        <input name="date" value='<%=res.getString("date")%>' type="text" class="form-control" style="border-radius: 5px 5px 5px 5px;" required>
                     </div>
                     
                     <div class="mb-3">
-                        <label class="col-auto">Content</label>
+                        <label class="col-auto">Terms and Regulations</label>
                         <input name="Content" value='<%=res.getString("Content")%>' type="text" class="form-control" style="border-radius: 5px 5px 5px 5px;" required>
                     </div>
                 

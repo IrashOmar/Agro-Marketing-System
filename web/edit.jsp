@@ -54,14 +54,41 @@ pageEncoding="ISO-8859-1"%>
                 </div>
 
                 <ul class="list-unstyled components">
+                   <li>
+                        <a href="AdminProfileCard/dist/AdminProfileCard.jsp" class="text">
+                            <i class=""></i>&nbsp&nbsp Profile</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="text">
+                            <i class="fas fa-edit"></i>&nbsp&nbsp Manage Profile</a>
+                    </li>
                     <li>
                         <a href="admin.jsp" class="text">
-                            <i class="fas fa-cart-plus"></i>&nbsp&nbsp Terms and Regulations</a>
+                            <i class=""></i>&nbsp&nbsp Terms</a>
                     </li>
 
                     <li class="active">
-                        <a href="edit.jsp">
-                            <i class="fas fa-edit"></i>&nbsp&nbspEdit</a>
+                        <a href="edit.jsp" class="text">
+                            <i class="fas fa-edit"></i>&nbsp&nbsp Manage Terms</a>
+                    </li>
+                    <li>
+                        <a href="ManageCategory.jsp" class="text">
+                            <i class=""></i>&nbsp&nbsp Category</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="text">
+                            <i class="fas fa-edit"></i>&nbsp&nbsp Manage Category</a>
+                    </li>
+                    <li>
+                        <a href="ManageReadingSection.jsp" class="text">
+                            <i class=""></i>&nbsp&nbsp Reading</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="text">
+                            <i class="fas fa-edit"></i>&nbsp&nbsp Manage Reading</a>
                     </li>
 
                  
@@ -117,7 +144,7 @@ pageEncoding="ISO-8859-1"%>
                   
                    %>
                                <tr class="table">
-                                    <td><%=res.getString("Terms_Id") %></td>
+                                    <td><%=res.getString("Date") %></td>
                                     <td><%=res.getString("Content") %></td>
                                   
                                     

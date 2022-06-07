@@ -35,14 +35,16 @@
                         </div>
                         <div class="navbar-collapse collapse ">
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="index.html">Home</a></li> 
+                               <li class="active"><a href="index.html">Home</a></li> 
                                 <!-- <li><a href="about.html">Available</a></li> -->
                                 <li><a href="Category2.jsp">Categories</a></li>
-                                <li class="active"><a href="ReadingSection.jsp">Reading Section</a></li>
+                                <li><a href="ReadingSection.jsp">Reading Section</a></li>
                                 <!-- <li><a href="portfolio.html">Categories</a></li> -->
                                 <li><a href="Feedback.jsp">Feedback</a></li>
+                                <li><a href="Trading/ranking.jsp">Trading</a></li>
                                 <li><a href="Cart3.jsp">Cart</a></li>
-                                <li><a href="Feedback.html">Profile</a></li>
+                                 <li><a href="Profile.jsp">Profile</a></li>
+
                             </ul>
                         </div>
                     </div>
@@ -64,14 +66,15 @@
                         <div class="col-md-12">
                             <div class="about-logo">
                                 <h3>Get in Touch!</h3>
-                                <p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas</p>
-                                <p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas</p>
+                                <p>We would like to hear it from you about anything. This is no other but to make MyDusun.com the most comfortable system for the users</p>
+                                <p>The results of this feedback will be carefully be analyzed before and update or new implementation is done  </p>
+                               
                             </div> 
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do tempor.</p>
+                            <p>Your time to fill in this feedback is highly appreciated by our team</p>
                             <div class="done">
                                 <div class="alert alert-success">
                                     <button type="button" class="close" data-dismiss="alert">×</button>

@@ -27,7 +27,7 @@ Class.forName("com.mysql.jdbc.Driver");
 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "admin");
 Statement st=conn.createStatement();
 
-int i=st.executeUpdate("insert into carttest(tree_id,quantity)values('"+id+"','"+1+"')");
+int i=st.executeUpdate("insert into cart(tree_id,quantity)values('"+id+"','"+1+"')");
 //int i=st.executeUpdate("insert into cart(tree_id,ProductName,quantity)values('"+id+"','"+ProductName+"','"+1+"')");
 }
 catch(Exception e)

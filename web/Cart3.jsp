@@ -130,46 +130,39 @@
 
                         <div class="product-card">
                             <%
-
                                 String tree_id = request.getParameter("tree_id");
                                 String driverName = "com.mysql.jdbc.Driver";
                                 String connectionUrl = "jdbc:mysql://localhost:3306/";
                                 String dbName = "test";
                                 String userId = "root";
                                 String password = "admin";
-
                                 try {
                                     Class.forName(driverName);
                                 } catch (ClassNotFoundException e) {
                                     e.printStackTrace();
                                 }
-
                                 Connection connection = null;
                                 Statement statement = null;
                                 ResultSet resultSet = null;
                                 Statement statement1 = null;
                                 ResultSet resultSet1 = null;
-
                             %>
-                            <%                                try {
+                            <%
+                                try {
                                     connection = DriverManager.getConnection(connectionUrl + dbName, userId, password);
 //                                    statement = connection.createStatement();
 //                                    String sql = "SELECT * FROM cart ";
-
 //                                    String cart_id = request.getParameter("cart_id");
 //                                    resultSet = statement.executeQuery(sql);
 //                                    String cart_id = resultSet.getString("cart_id");
                                     statement1 = connection.createStatement();
-                                    String sql1 = "SELECT cart.cart_id, cart.quantity, tree.ProductName"
-                                            + ",trybackend.Price FROM cart JOIN tree ON cart"
-                                            + ".tree_id = tree.tree_id" + " JOIN trybackend ON cart.tree_id = trybackend.tree_id ORDER BY cart_id";
-
+                                    String sql1 = "SELECT cart.cart_id, cart.quantity, tree.ProductName,trybackend.Price FROM cart JOIN trybackend ON cart.id = trybackend.id JOIN tree ON trybackend.tree_id = tree.tree_id ORDER BY cart_id";
 //                                      String sql1= "Select cart.quantity, cart.cart_id, trees.ProductName From cart left join tree as trees cart.tree_id";
                                     resultSet1 = statement1.executeQuery(sql1);
-      
+
                                     while (resultSet1.next()) {
-                                        
-                    String cart_id=resultSet1.getString("cart_id");
+
+                                        String cart_id = resultSet1.getString("cart_id");
                             %>
 
                             <div class="card">
@@ -198,7 +191,8 @@
                                         </div>
 
                                         <div class="price">
-                                            $ <span id="price"><%=resultSet1.getString("price")%></span>
+                                            $ <span id="price<%=cart_id%>"><%=resultSet1.getString("price")%></span>
+                                            <span id="price" style="display:none;"><%=resultSet1.getString("price")%></span>
                                         </div>
 
                                     </div>
@@ -217,13 +211,11 @@
 
                             </div>
                             <%
-
                                     }
 
                                 } catch (Exception e) {
                                     e.printStackTrace();
                                 }
-
                             %>
 
 
@@ -308,7 +300,7 @@
                     </div>
 
                     <div class="total">
-                        <span>Total</span> <span>$ <span id="total">2.15</span></span>
+                        <span>Total</span> <span>$ <span id="sum">0</span></span>
                     </div>
 
                 </div>
@@ -322,23 +314,43 @@
 </main>
 
 <script>
+   var sum = parseInt(document.getElementById('sum').innerText);
     function increment(cart_id) {
-       var value = document.getElementById('quantity'+cart_id).innerText;
-	console.log(document.getElementById('quantity'+cart_id).innerText)
-        if(value < 100) {
-		value++;
-document.getElementById('quantity'+cart_id).innerText=value;	}
-        
-        
+        var value = document.getElementById('quantity' + cart_id).innerText;
+//        console.log(document.getElementById('quantity' + cart_id).innerText)
+        console.log(document.getElementById('price' + cart_id).innerText)
+
+          var price = document.getElementById('price').innerText;
+        var total;
+        if (value < 100) {
+            value++;
+            total = value * price;
+            console.log(total);
+            document.getElementById('quantity' + cart_id).innerText = value;
+            document.getElementById('price' + cart_id).innerText = total;
+            sum = total + sum;
+            document.getElementById('sum').innerText = sum;
+
+
+        }
+
+
     }
-    
+
     function decrement(cart_id) {
-       var value = document.getElementById('quantity'+cart_id).innerText;
-	console.log(document.getElementById('quantity'+cart_id).innerText)
-        if(value > 0) {
-		value--;
-document.getElementById('quantity'+cart_id).innerText=value;
-    }
+        var value = document.getElementById('quantity' + cart_id).innerText;
+        console.log(document.getElementById('quantity' + cart_id).innerText)
+        
+        let price = document.getElementById('price').innerText;
+        let total;
+        if (value >= 0) {
+            value--;
+            total = value * price;
+            console.log(total);
+            document.getElementById('quantity' + cart_id).innerText = value;
+            document.getElementById('price' + cart_id).innerText = total;
+
+        }
     }
 </script>
 

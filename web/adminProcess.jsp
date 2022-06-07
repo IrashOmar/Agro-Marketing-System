@@ -11,7 +11,7 @@ pageEncoding="ISO-8859-1"%>
     <body>
 
 <%
-String Terms_Id=request.getParameter("Terms_Id");
+String Terms_Id=request.getParameter("date");
 String Content=request.getParameter("Content");
 
 
@@ -22,7 +22,7 @@ Class.forName("com.mysql.jdbc.Driver");
 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "admin");
 Statement st=conn.createStatement();
 
-int i=st.executeUpdate("insert into terms(Terms_Id,Content)values('"+Terms_Id+"','"+Content+"')");
+int i=st.executeUpdate("insert into terms(date,Content)values('"+Terms_Id+"','"+Content+"')");
 
 }
 catch(Exception e)

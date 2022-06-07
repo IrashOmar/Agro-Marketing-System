@@ -49,8 +49,8 @@
             <div class="wrapper wrapper--w680">
                 <div class="card card-4">
                     <div class="card-body">
-                        <h2 class="title">Farmer Registration</h2>
-                        <form action="UploadServlet" method="post" enctype="multipart/form-data">
+                        <h2 class="title">Farm Registration</h2>
+                        <form action="UploadServletTest" method="post" enctype="multipart/form-data">
                             <div class="row row-space">
                                 <div class="col-2">
                                     <div class="input-group">
@@ -60,7 +60,7 @@
                                 </div>
                                 <div class="col-2">
                                     <div class="input-group">
-                                        <label class="label">Name</label>
+                                        <label class="label">Farm Name</label>
                                         <input class="input--style-4" type="text" name="name">
                                     </div>
                                 </div>
@@ -70,44 +70,26 @@
                                         <input class="input--style-4" type="text" name="password">
                                     </div>
                                 </div>
-                                <div class="col-2">
-                                    <div class="input-group">
-                                        <label class="label">Identity Card </label>
-                                        <input class="input--style-4" type="text" name="ic">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row row-space">
+                                <!--                                <div class="col-2">
+                                                                    <div class="input-group">
+                                                                        <label class="label">Identity Card </label>
+                                                                        <input class="input--style-4" type="text" name="ic">
+                                                                    </div>
+                                                                </div>-->
                                 <div class="col-2">
                                     <div class="input-group">
                                         <label class="label">Address </label>
                                         <input class="input--style-4" type="text" name="address">
                                     </div>
                                 </div>
-
-                                <div class="col-2">
-                                    <div class="input-group">
-                                        <label class="label">Gender</label>
-                                        <div class="p-t-10">
-                                            <label class="radio-container m-r-45">Male
-                                                <input type="radio" checked="checked" name="gender" value="M">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                            <label class="radio-container">Female
-                                                <input type="radio" name="gender" value="F">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                             <div class="row row-space">
-                                <!--                            <div class="col-2">
-                                                                <div class="input-group">
-                                                                    <label class="label">Email</label>
-                                                                    <input class="input--style-4" type="email" name="email">
-                                                                </div>
-                                                            </div>-->
+<!--                                <div class="col-2">
+                                    <div class="input-group">
+                                        <label class="label">Address </label>
+                                        <input class="input--style-4" type="text" name="address">
+                                    </div>
+                                </div>-->
                                 <div class="col-2">
                                     <div class="input-group">
                                         <label class="label">Phone Number</label>
@@ -121,54 +103,91 @@
                                     </div>
                                 </div>
                             </div>
-<!--                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Farm Cert</label>
-                                    <input class="input--style-4" type="file" name="file">
-                                </div>
-                            </div>-->
-                            <!--                        <div class="input-group">
-                                                        <label class="label">Role</label>
-                                                        <div class="rs-select2 js-select-simple select--no-search">
-                                                            <select name="file" onchange='CheckRole(this.value);'>
-                                                                <option disabled="disabled" selected="selected">Choose option</option>
-                                                                <option value="1">Buyer</option>
-                                                                <option value="2">Farmer</option>
-                                                                <option>Subject 3</option>
-                                                            </select>
-                                                               <div class="col-2">
-                                                            <div class="input-group">
-                                                                <label class="label" >Upload Certificate</label>
-                                                               
-                                                            </div>
-                                                        </div>
-                                                            <div class="select-dropdown"></div>-->
+                                
+                                   <div class="p-t-15">
+                                <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
+                            </div>
+                               </form>
                     </div>
 
+<!--                                <div class="col-2">-->
+                                    <!--                                    <div class="input-group">
+                                                                            <label class="label">Gender</label>
+                                                                            <div class="p-t-10">
+                                                                                <label class="radio-container m-r-45">Male
+                                                                                    <input type="radio" checked="checked" name="gender" value="M">
+                                                                                    <span class="checkmark"></span>
+                                                                                </label>
+                                                                                <label class="radio-container">Female
+                                                                                    <input type="radio" name="gender" value="F">
+                                                                                    <span class="checkmark"></span>
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>-->
+                                    <!--                                </div>
+                                                                </div>-->
+<!--                                    <div class="row row-space">-->
+                                        <!--                            <div class="col-2">
+                                                                        <div class="input-group">
+                                                                            <label class="label">Email</label>
+                                                                            <input class="input--style-4" type="email" name="email">
+                                                                        </div>
+                                                                    </div>-->
+                                        <!--                                        <div class="col-2">
+                                                                                    <div class="input-group">
+                                                                                        <label class="label">Phone Number</label>
+                                                                                        <input class="input--style-4" type="text" name="phone">
+                                                                                    </div>
+                                                                                </div>-->
+
+<!--                                    </div>-->
+                                    <!--                            <div class="col-2">
+                                                                    <div class="input-group">
+                                                                        <label class="label">Farm Cert</label>
+                                                                        <input class="input--style-4" type="file" name="file">
+                                                                    </div>
+                                                                </div>-->
+                                    <!--                        <div class="input-group">
+                                                                <label class="label">Role</label>
+                                                                <div class="rs-select2 js-select-simple select--no-search">
+                                                                    <select name="file" onchange='CheckRole(this.value);'>
+                                                                        <option disabled="disabled" selected="selected">Choose option</option>
+                                                                        <option value="1">Buyer</option>
+                                                                        <option value="2">Farmer</option>
+                                                                        <option>Subject 3</option>
+                                                                    </select>
+                                                                       <div class="col-2">
+                                                                    <div class="input-group">
+                                                                        <label class="label" >Upload Certificate</label>
+                                                                       
+                                                                    </div>
+                                                                </div>
+                                                                    <div class="select-dropdown"></div>-->
+<!--                                </div>-->
+
+<!--                            </div>-->
+
+                            <!--                         <input class="input--style-4" type="file" name="role" id="role" style="display:none " placeholder="Upload Farm Certification">
+                            -->
+<!--                            <div class="p-t-15">
+                                <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
+                            </div>-->
+                     
+                    <!--            </div>
+                            </div>-->
                 </div>
 
-                <!--                         <input class="input--style-4" type="file" name="role" id="role" style="display:none " placeholder="Upload Farm Certification">
-                -->
-                <div class="p-t-15">
-                    <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
-                </div>
-                </form>
-            </div>
-            <!--            </div>
-                    </div>-->
-        </div>
+                <!-- Jquery JS-->
+                <script src="Registrationvendor/jquery/jquery.min.js"></script>
+                <!-- Vendor JS-->
+                <script src="Registrationvendor/select2/select2.min.js"></script>
+                <script src="Registrationvendor/datepicker/moment.min.js"></script>
+                <script src="Registrationvendor/datepicker/daterangepicker.js"></script>
 
-        <!-- Jquery JS-->
-        <script src="Registrationvendor/jquery/jquery.min.js"></script>
-        <!-- Vendor JS-->
-        <script src="Registrationvendor/select2/select2.min.js"></script>
-        <script src="Registrationvendor/datepicker/moment.min.js"></script>
-        <script src="Registrationvendor/datepicker/daterangepicker.js"></script>
+                <!-- Main JS-->
+                <script src="Registrationjs/global.js"></script>
 
-        <!-- Main JS-->
-        <script src="Registrationjs/global.js"></script>
+                </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
-    </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
-
-</html>
-<!-- end document-->
+                </html>
+                <!-- end document-->

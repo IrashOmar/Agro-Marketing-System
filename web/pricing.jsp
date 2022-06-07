@@ -43,11 +43,13 @@
                                 <li class="active"><a href="index.html">Home</a></li> 
                                 <!-- <li><a href="about.html">Available</a></li> -->
                                 <li><a href="Category2.jsp">Categories</a></li>
-                                <li class="active"><a href="services.html">Reading Section</a></li>
+                                <li><a href="ReadingSection.jsp">Reading Section</a></li>
                                 <!-- <li><a href="portfolio.html">Categories</a></li> -->
                                 <li><a href="Feedback.jsp">Feedback</a></li>
-                                <li><a href="Feedback.html">Cart</a></li>
-                                 <li><a href="Feedback.html">Profile</a></li>
+                                <li><a href="Trading/ranking.jsp">Trading</a></li>
+                                <li><a href="Cart3.jsp">Cart</a></li>
+                                 <li><a href="Profile.jsp">Profile</a></li>
+
 
                             </ul>
                         </div>
@@ -124,7 +126,7 @@
                            </div>
       
                                 <div class="pricing-action">
-                                    <a href="pricingProcess.jsp?tree_id=<%=res.getString("tree_id")%>" class="btn btn-medium"><i class="icon-bolt"></i>Add To Cart</a>
+                                    <a href="pricingProcess.jsp?id=<%=res.getString("id")%>" class="btn btn-medium"><i class="icon-bolt"></i>Add To Cart</a>
                                 </div>
       
                             </div>
