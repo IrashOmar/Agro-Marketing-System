@@ -59,7 +59,7 @@ public class FileUploadServletAdmin2 extends HttpServlet {
               response.setContentType("text/html; charset=utf-8");
              out.println("<script type=\"text/javascript\">");
                 out.println("alert(\"New Post Added!!\")");
-               out.println("window.open('post.html','_self')");
+               out.println("window.open('ManageCategoryTest.jsp','_self')");
                 out.println("</script >");;
               
                

@@ -27,7 +27,7 @@ String url = "jdbc:mysql://localhost:3306/test";
 String user = "root";
 String dbpsw = "admin";
 
-String sql = "select * from farmerregistration where email=? and password=?";
+String sql = "select * from farmerregistrationtest where email=? and password=?";
 
 String email = request.getParameter("email");
 String password = request.getParameter("password");
@@ -51,7 +51,7 @@ if(email.equals(userdbName) && password.equals(userdbPsw))
 {
 session.setAttribute("email",userdbName);
 //session.setAttribute("usertype", dbUsertype); 
-response.sendRedirect("ChooseRole.jsp"); 
+response.sendRedirect("FarmerMainPage.html"); 
 } 
 }
 else

@@ -73,12 +73,12 @@ pageEncoding="ISO-8859-1"%>
                             <i class="fas fa-edit"></i>&nbsp&nbsp Manage Terms</a>
                     </li>
                     <li>
-                        <a href="ManageCategory.jsp" class="text">
+                        <a href="ManageCategoryTest.jsp" class="text">
                             <i class=""></i>&nbsp&nbsp Category</a>
                     </li>
 
                     <li>
-                        <a href="#" class="text">
+                        <a href="editCategory.jsp" class="text">
                             <i class="fas fa-edit"></i>&nbsp&nbsp Manage Category</a>
                     </li>
                     <li>
@@ -87,7 +87,7 @@ pageEncoding="ISO-8859-1"%>
                     </li>
 
                     <li>
-                        <a href="#" class="text">
+                        <a href="editReadingSection.jsp" class="text">
                             <i class="fas fa-edit"></i>&nbsp&nbsp Manage Reading</a>
                     </li>
 

@@ -54,8 +54,8 @@
                                 <!-- <li><a href="portfolio.html">Categories</a></li> -->
                                 <li><a href="Feedback.jsp">Feedback</a></li>
                                 <li><a href="Trading/ranking.jsp">Trading</a></li>
-                                <li><a href="Cart3.jsp">Cart</a></li>
-                                 <li><a href="Profile.jsp">Profile</a></li>
+                                 <li><a href="CartNew.jsp">Cart</a></li>
+                                 <li><a href="BuyerProfile.jsp">Profile</a></li>
 
                             </ul>
                         </div>
@@ -130,7 +130,7 @@
                         Class.forName("com.mysql.jdbc.Driver");
                         conn = DriverManager.getConnection(host,"root","admin");
                         stat = conn.createStatement();
-                        String data = "select * from tree";
+                        String data = "select * from tree2";
                         res = stat.executeQuery(data);
                         while(res.next()){
                          String filename = res.getString("filename");

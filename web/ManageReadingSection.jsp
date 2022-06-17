@@ -62,7 +62,7 @@
                     </li>
 
                     <li>
-                        <a href="#" class="text">
+                        <a href="editCategory.jsp" class="text">
                             <i class="fas fa-edit"></i>&nbsp&nbsp Manage Category</a>
                     </li>
                     <li  class="active">
@@ -71,7 +71,7 @@
                     </li>
 
                     <li>
-                        <a href="#" class="text">
+                        <a href="editReadingSection.jsp" class="text">
                             <i class="fas fa-edit"></i>&nbsp&nbsp Manage Reading</a>
                     </li>
 
@@ -103,7 +103,7 @@
                 </div>
                 <div class="mb-3">
                     <label class="col-auto">Content</label>
-                    <textarea name="content" cols="19" rows="6" class="form-control" style="border-radius: 5px 5px 5px 5px;"></textarea>
+                    <input name="content" type="text" class="form-control" style="border-radius: 5px 5px 5px 5px;" required>
                 </div>
                      <div class=" mb-3">
                     <label class="col-auto">Page URL</label>

@@ -62,7 +62,7 @@
                     </li>
 
                     <li>
-                        <a href="#" class="text">
+                        <a href="editCategory.jsp" class="text">
                             <i class="fas fa-edit"></i>&nbsp&nbsp Manage Category</a>
                     </li>
                     <li>

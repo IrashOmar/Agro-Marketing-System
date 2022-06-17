@@ -69,7 +69,7 @@ pageEncoding="ISO-8859-1"%>
                     </li>
 
                     <li>
-                        <a href="#" class="text">
+                        <a href="editCategory.jsp" class="text">
                             <i class="fas fa-edit"></i>&nbsp&nbsp Manage Category</a>
                     </li>
                     <li>
@@ -78,7 +78,7 @@ pageEncoding="ISO-8859-1"%>
                     </li>
 
                     <li>
-                        <a href="#" class="text">
+                        <a href="editReadingSection.jsp" class="text">
                             <i class="fas fa-edit"></i>&nbsp&nbsp Manage Reading</a>
                     </li>
               

@@ -42,8 +42,8 @@
                                 <!-- <li><a href="portfolio.html">Categories</a></li> -->
                                 <li><a href="FarmerFeedback.jsp">Feedback</a></li>
                                 <li><a href="OrderList.jsp">Order</a></li>
-                                <li><a href="Cart3.jsp">Progress</a></li>
-                                 <li><a href="Profile.jsp">Profile</a></li>
+                                <li><a href="#">Progress</a></li>
+                                 <li><a href="FarmerProfile.jsp">Profile</a></li>
                             </ul>
                         </div>
                     </div>

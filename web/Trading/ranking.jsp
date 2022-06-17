@@ -50,8 +50,8 @@
                                 <!-- <li><a href="portfolio.html">Categories</a></li> -->
                                 <li><a href="../Feedback.jsp">Feedback</a></li>
                                 <li><a href="ranking.jsp">Trading</a></li>
-                                <li><a href="../Cart3.jsp">Cart</a></li>
-                                <li><a href="../Profile.jsp">Profile</a></li>                    </ul>
+                                <li><a href="../CartNew.jsp">Cart</a></li>
+                                <li><a href="../BuyerProfile.jsp">Profile</a></li></ul>
                         </div>
                     </div>
                 </div>
@@ -221,16 +221,14 @@
                             <thead class="bg-light">
                                 <tr class="border-0">
 
-
-
-
-                                   
                                     <th class="border-0">Fruit Tree</th>
                                     <th class="border-0">Quantity</th>
-                                    <th class="border-0">Condition</th>
+                                    <th class="border-0">Status</th>
                                     <th class="border-0">Fruit Produced(kg)</th>
-                                    <th class="border-0">Profit</th>
+                                    <th class="border-0">Profit(RM)</th>
                                     <th class="border-0">Date</th>
+                                    <th class="border-0">Action</th>
+
                                 </tr>
 
                             </thead>
@@ -240,11 +238,14 @@
                                 <tr>
 
 
-                                    <td>1</td>
-                                    <td>Durian Musang King</td>
-                                    <td>1</td><!-- comment -->
-                                    <td>RM 23.40</td><!-- comment -->
+                                    <td>Durian</td>
+                                    <td>3</td>
+                                    <td>Leaf Growth</td><!-- comment -->
+                                    <td>No Fruits</td><!-- comment -->
+                                    <td>No Profit</td>
                                     <td>30/3/2022</td>
+                                    <td></td>
+
 
 
 
@@ -253,24 +254,14 @@
                                 <tr>
 
 
-                                    <td>1</td>
-                                    <td>Durian Musang King</td>
-                                    <td>1</td><!-- comment -->
-                                    <td>RM 23.40</td><!-- comment -->
-                                    <td>30/3/2022</td>
+                                    <td>Durian</td>
+                                    <td>3</td>
+                                    <td>Leaf Growth</td><!-- comment -->
+                                    <td>No Fruits</td><!-- comment -->
+                                    <td>No Profit</td>
+                                    <td>30/3/2022</td>d>
+                                    <td></td>
 
-
-
-
-                                </tr>
-                                <tr>
-
-
-                                    <td>1</td>
-                                    <td>Durian Musang King</td>
-                                    <td>1</td><!-- comment -->
-                                    <td>RM 23.40</td><!-- comment -->
-                                    <td>30/3/2022</td>
 
 
 
@@ -279,11 +270,28 @@
                                 <tr>
 
 
-                                    <td>1</td>
-                                    <td>Durian Musang King</td>
-                                    <td>1</td><!-- comment -->
-                                    <td>RM 23.40</td><!-- comment -->
+                                    <td>Durian</td>
+                                    <td>3</td>
+                                    <td>Leaf Growth</td><!-- comment -->
+                                    <td>No Fruits</td><!-- comment -->
+                                    <td>No Profit</td>
                                     <td>30/3/2022</td>
+                                    <td></td>
+
+
+
+
+
+                                </tr>
+                                <tr>
+
+                                    <td>Durian</td>
+                                    <td>3</td>
+                                    <td>Leaf Growth</td><!-- comment -->
+                                    <td>No Fruits</td><!-- comment -->
+                                    <td>No Profit</td>
+                                    <td>30/3/2022</td>
+                                    <td></td>
 
 
 
@@ -292,11 +300,14 @@
                                 <tr>
 
 
-                                    <td>1</td>
-                                    <td>Durian Musang King</td>
-                                    <td>1</td><!-- comment -->
-                                    <td>RM 23.40</td><!-- comment -->
+                                    <td>Durian</td>
+                                    <td>3</td>
+                                    <td>Leaf Growth</td><!-- comment -->
+                                    <td>No Fruits</td><!-- comment -->
+                                    <td>No Profit</td>
                                     <td>30/3/2022</td>
+                                    <td></td>
+
 
 
 
