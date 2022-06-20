@@ -15,13 +15,13 @@
     </head>
     <body>
         <%
-            String d = request.getParameter("d");
-            int no= Integer.parseInt(d);
+            String Terms_Id = request.getParameter("d");
+            
             Class.forName("com.mysql.jdbc.Driver").newInstance();
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","admin");
             Statement stat = conn.createStatement();
-            stat.executeUpdate(" DELETE from cart where cart_id='"+no+"'");
-            response.sendRedirect("CartNew.jsp");
+            stat.executeUpdate("delete from terms2 where Terms_Id='"+Terms_Id+"'");
+            response.sendRedirect("EditTerms.jsp");
             %>
             
     </body>

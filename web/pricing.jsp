@@ -117,6 +117,7 @@
                                 </div>
                                 <div class="pricing-container">
                                     <ul>
+                                        Available Quantity:<li><i class="icon-ok"></i><%=res.getString("Avail_quantity")%></li>
                                         Price/Tree:<li><i class="icon-ok"></i><%=res.getString("Price")%></li>
                                         
                                         Location : <li><i class="icon-ok"></i><%=res.getString("Location")%></li>

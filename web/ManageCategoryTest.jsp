@@ -47,13 +47,17 @@
                         <a href="#" class="text">
                             <i class="fas fa-edit"></i>&nbsp&nbsp Manage Profile</a>
                     </li>
+                       <li>
+                        <a href="ViewCert.jsp" class="text">
+                            <i class="fas fa-edit"></i>&nbsp&nbsp View Farm Certification</a>
+                    </li>
                     <li>
-                        <a href="admin.jsp" class="text">
+                        <a href="adminTest.jsp" class="text">
                             <i class=""></i>&nbsp&nbsp Terms</a>
                     </li>
 
                     <li>
-                        <a href="edit.jsp" class="text">
+                        <a href="EditTerms.jsp" class="text">
                             <i class="fas fa-edit"></i>&nbsp&nbsp Manage Terms</a>
                     </li>
                     <li class="active">

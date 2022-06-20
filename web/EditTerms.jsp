@@ -63,7 +63,7 @@
                         <a href="#" class="text">
                             <i class="fas fa-edit"></i>&nbsp&nbsp Manage Profile</a>
                     </li>
-                       <li>
+                    <li>
                         <a href="ViewCert.jsp" class="text">
                             <i class="fas fa-edit"></i>&nbsp&nbsp View Farm Certification</a>
                     </li>
@@ -72,7 +72,7 @@
                             <i class=""></i>&nbsp&nbsp Terms</a>
                     </li>
 
-                    <li>
+                    <li class="active">
                         <a href="EditTerms.jsp" class="text">
                             <i class="fas fa-edit"></i>&nbsp&nbsp Manage Terms</a>
                     </li>
@@ -81,7 +81,7 @@
                             <i class=""></i>&nbsp&nbsp Category</a>
                     </li>
 
-                    <li class="active">
+                    <li >
                         <a href="editCategory.jsp" class="text">
                             <i class="fas fa-edit"></i>&nbsp&nbsp Manage Category</a>
                     </li>
@@ -123,11 +123,14 @@
                         <table class="table table-striped table-hover table-bordered ">
                             <thead class="table-dark">
 
+
                                 <tr class="">
-                                    <th>Product Category</th>
-                                    <th>Product Name</th>
-                                    <th>Product Image</th>
-                                    <th>Action</th>
+
+                                    <th>Date</th>
+
+                                    <th>Terms</th>
+
+
 
 
                                 </tr>
@@ -136,35 +139,45 @@
                             <tbody>
                                 <%
 
-                                    String host = "jdbc:mysql://localhost:3306/test";
-                                    Connection conn = null;
-                                    Statement stat = null;
-                                    ResultSet res = null;
-                                    Class.forName("com.mysql.jdbc.Driver");
-                                    conn = DriverManager.getConnection(host, "root", "admin");
-                                    stat = conn.createStatement();
-                                    String data = "SELECT tree2.ProductName, tree2.tree_id, tree2.filename, trycat.category FROM tree2 INNER JOIN trycat ON tree2.cat_id=trycat.cat_id;";
-                                    res = stat.executeQuery(data);
-                                    while (res.next()) {
-                                        String tree_id = res.getString("tree_id");
+                                    try {
+                                        String host = "jdbc:mysql://localhost:3306/test";
+                                        Connection conn = null;
+                                        Statement stat = null;
+                                        ResultSet res = null;
+                                        String cat_id = request.getParameter("Terms_Id");
+
+                                        Class.forName("com.mysql.jdbc.Driver");
+                                        conn = DriverManager.getConnection(host, "root", "admin");
+                                        stat = conn.createStatement();
+                                        String data = "select * from terms2";
+                                        res = stat.executeQuery(data);
+                                        while (res.next()) {
+                                            String filename = res.getString("filename");
 
                                 %>
                                 <tr class="table">
-                                    <td><%=res.getString("category")%></td>
-                                    <td><%=res.getString("ProductName")%></td>
-                                    <td><%=res.getString("filename")%></td>
+                                    <!--                                     <td></td>-->
 
+                                    <td><%=res.getString(2)%></td>
+                                    <td><a href="DownloadServlet?fileName=<%=res.getString(3)%>" class="btn btn-warning">Download</a>
+                                        <a href='deleteTerms.jsp?d=<%=res.getString("Terms_Id")%>' class="btn btn-danger">Delete</a>
+                                    </td>
 
-
-
-
-                                    <td>
-                                        <a href ='editCategoryProcess.jsp?u=<%=res.getString("tree_id")%>' class="btn btn-warning">Edit</a><!-- comment -->
-                                        <a href='deleteCategory.jsp?d=<%=res.getString("tree_id")%>' class="btn btn-danger">Delete</a><!-- comment -->
+                                    <!--
+                                                                        <td>
+                                                                           
+                                                                                <button class="btn btn--radius-2 btn--blue" type="submit">Download</button>
+                                                                            <a href ='DownloadServlet?fileName= type="submit" class="btn btn-warning">Download</a> 
+                                                                            <a href ='deleteCategory.jsp?d= class="btn btn-danger">Delete</a>  -->
 
                                     </td>
                                 </tr>
+
                                 <%
+                                        }
+                                    } catch (NullPointerException e) {
+                                        System.out.println("Error at detail: " + e.getStackTrace().toString());
+                                        e.printStackTrace();
                                     }
                                 %>
                             </tbody>

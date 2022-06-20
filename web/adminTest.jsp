@@ -1,28 +1,16 @@
-<%-- 
-    Document   : edit
-    Created on : May 31, 2021, 11:43:12 PM
-    Author     : User
---%>
-
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.Statement"%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.PreparedStatement"%>
-<%@page import="java.sql.Connection"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="ISO-8859-1"%>
-
-
 <!DOCTYPE html>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page language="java"%>
+<%@page import="java.sql.*"%>
+<%@page import="java.io.File"%>
 <html>
 
     <head>
-
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <title>Edit Product</title>
+        <title>Admin System</title>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
         <!-- Bootstrap CSS CDN -->
@@ -30,9 +18,7 @@
         <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"> -->
         <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
         <!-- Our Custom CSS -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-
-        <link rel="stylesheet" href="admin.css">
+        <link href="admin.css" rel="stylesheet" />
 
         <!-- Font Awesome JS -->
         <!-- <script src="https://kit.fontawesome.com/1f0cb49d65.js" crossorigin="anonymous"></script> -->
@@ -43,17 +29,16 @@
 
     <body>
 
-
-
         <div class="wrapper">
             <!-- Sidebar Holder -->
 
             <nav id="sidebar">
                 <div class="sidebar-header">
-                    <img src="../img/HajahRosnani_Logo.png" alt="logo" width="150" class="mx-2">
+                    <img src="" alt="logo" width="150" class="mx-2">
                 </div>
 
                 <ul class="list-unstyled components">
+
                     <li>
                         <a href="AdminProfileCard/dist/AdminProfileCard.jsp" class="text">
                             <i class=""></i>&nbsp&nbsp Profile</a>
@@ -67,7 +52,7 @@
                         <a href="ViewCert.jsp" class="text">
                             <i class="fas fa-edit"></i>&nbsp&nbsp View Farm Certification</a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="adminTest.jsp" class="text">
                             <i class=""></i>&nbsp&nbsp Terms</a>
                     </li>
@@ -81,7 +66,7 @@
                             <i class=""></i>&nbsp&nbsp Category</a>
                     </li>
 
-                    <li class="active">
+                    <li>
                         <a href="editCategory.jsp" class="text">
                             <i class="fas fa-edit"></i>&nbsp&nbsp Manage Category</a>
                     </li>
@@ -91,10 +76,9 @@
                     </li>
 
                     <li>
-                        <a href="editReadingSection.jsp" class="text">
+                        <a href="#" class="text">
                             <i class="fas fa-edit"></i>&nbsp&nbsp Manage Reading</a>
                     </li>
-
 
 
                 </ul>
@@ -113,74 +97,52 @@
                     </div>
                 </nav>
 
-
-
                 <div class="container">
-                    <div class="mb-4">
+                    <form method="post" action="FileUploadTerms" id="contactform" class="contact" enctype ="multipart/form-data">
 
-                    </div>
-                    <div class="table-responsive mb-4 ">
-                        <table class="table table-striped table-hover table-bordered ">
-                            <thead class="table-dark">
-
-                                <tr class="">
-                                    <th>Product Category</th>
-                                    <th>Product Name</th>
-                                    <th>Product Image</th>
-                                    <th>Action</th>
-
-
-                                </tr>
-
-                            </thead>
-                            <tbody>
-                                <%
-
-                                    String host = "jdbc:mysql://localhost:3306/test";
-                                    Connection conn = null;
-                                    Statement stat = null;
-                                    ResultSet res = null;
-                                    Class.forName("com.mysql.jdbc.Driver");
-                                    conn = DriverManager.getConnection(host, "root", "admin");
-                                    stat = conn.createStatement();
-                                    String data = "SELECT tree2.ProductName, tree2.tree_id, tree2.filename, trycat.category FROM tree2 INNER JOIN trycat ON tree2.cat_id=trycat.cat_id;";
-                                    res = stat.executeQuery(data);
-                                    while (res.next()) {
-                                        String tree_id = res.getString("tree_id");
-
-                                %>
-                                <tr class="table">
-                                    <td><%=res.getString("category")%></td>
-                                    <td><%=res.getString("ProductName")%></td>
-                                    <td><%=res.getString("filename")%></td>
-
-
-
-
-
-                                    <td>
-                                        <a href ='editCategoryProcess.jsp?u=<%=res.getString("tree_id")%>' class="btn btn-warning">Edit</a><!-- comment -->
-                                        <a href='deleteCategory.jsp?d=<%=res.getString("tree_id")%>' class="btn btn-danger">Delete</a><!-- comment -->
-
-                                    </td>
-                                </tr>
-                                <%
-                                    }
-                                %>
-                            </tbody>
-                        </table>
-
+                        <div class=" mb-3">
+                            <label class="col-auto">Date</label>
+                            <input name="date" type="text" class="form-control" style="border-radius: 5px 5px 5px 5px;" required>
+                        </div>
+                         <div class="mb-3">
+                        <label class="col-auto">Terms & Regulations</label>
+                        <input name="file" type="file" class="form-control" style="border-radius: 5px 5px 5px 5px;">
                     </div>
 
+
+
+                       <input name="submit" value="Insert Product" type="submit" class="btn btn-primary form-control">
+                    </form>
                 </div>
+
+
+
             </div>
-
-
-
-
         </div>
+
+        <!-- jQuery CDN - Slim version (=without AJAX) -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous"></script>
+        <!-- Popper.JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js " integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ " crossorigin="anonymous"></script>
+        <!-- Bootstrap JS -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js " integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm " crossorigin="anonymous"></script>
+        <script src="js/tinymce/tinymce.min.js"></script>
+        <script>
+            tinymce.init({
+                selector: 'textarea'
+            });
+        </script>
+        <!--    <script type="text/javascript">
+                $(document).ready(function() {
+                    $('#sidebarCollapse').on('click', function() {
+                        $('#sidebar').toggleClass('active');
+                        $(this).toggleClass('active');
+                    });
+                });
+            </script>-->
 
 
     </body>
 
 </html>
+

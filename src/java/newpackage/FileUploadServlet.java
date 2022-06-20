@@ -33,51 +33,50 @@ public class FileUploadServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-          response.setContentType("text/html; charset=utf-8");
+        response.setContentType("text/html; charset=utf-8");
         PrintWriter out = response.getWriter();
         String ProductName = request.getParameter("ProductName");
         String Category = request.getParameter("Category");
         String FarmName = request.getParameter("FarmName");
-       
+        String Avail_quantity = request.getParameter("Avail_quantity");
+
         String Price = request.getParameter("Price");
-        
+
         String Location = request.getParameter("Location");
-        String Experience=request.getParameter("Experience");
+        String Experience = request.getParameter("Experience");
         Part part = request.getPart("file");
-        String fileName= extractFileName(part);
+        String fileName = extractFileName(part);
         String savePath = "C:\\Users\\User\\Desktop\\New Fyp Design\\FypBackend\\MyDusunBackEnd\\MyDususn.com\\web\\img" + File.separator + fileName;
         File fileSaveDir = new File(savePath);
-        
+
         part.write(savePath + File.separator);
-        
-        
-        try{
+
+        try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "admin");
-            PreparedStatement pst = con.prepareStatement("insert into trybackend (tree_id,cat_id,FarmName,Price,Location,Experience,filename,path) values (?,?,?,?,?,?,?,?)");
+            PreparedStatement pst = con.prepareStatement("insert into trybackend (tree_id,cat_id,FarmName,Avail_quantity,Price,Location,Experience,filename,path) values (?,?,?,?,?,?,?,?,?)");
             pst.setString(1, ProductName);
             pst.setString(2, Category);
             pst.setString(3, FarmName);
-            pst.setString(4, Price);
-            pst.setString(5, Location);
-            pst.setString(6, Experience);
-            pst.setString(7, fileName);
-            pst.setString(8, savePath);
+            pst.setString(4, Avail_quantity);
+            pst.setString(5, Price);
+            pst.setString(6, Location);
+            pst.setString(7, Experience);
+            pst.setString(8, fileName);
+            pst.setString(9, savePath);
             pst.executeUpdate();
-              response.setContentType("text/html; charset=utf-8");
-             out.println("<script type=\"text/javascript\">");
-                out.println("alert(\"New Post Added!!\")");
-               out.println("window.open('post.html','_self')");
-                out.println("</script >");;
-              
-               
-          
-        }catch (Exception e) {
+            response.setContentType("text/html; charset=utf-8");
+            out.println("<script type=\"text/javascript\">");
+            out.println("alert(\"New Post Added!!\")");
+            out.println("window.open('post.html','_self')");
+            out.println("</script >");;
+
+        } catch (Exception e) {
             out.println(e);
         }
 
-            
-        }
+    }
+
     private String extractFileName(Part part) {
         String contentDisp = part.getHeader("content-disposition");
         String[] items = contentDisp.split(";");
@@ -86,9 +85,6 @@ public class FileUploadServlet extends HttpServlet {
                 return s.substring(s.indexOf("=") + 2, s.length() - 1);
             }
         }
-   return "";
+        return "";
     }
 }
-
-        
- 

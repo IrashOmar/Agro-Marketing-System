@@ -105,12 +105,14 @@
                             </div>
 
                         </form>
-
+ 
                     </div>
-
+             
+                    <form action="addToViewOrder.jsp">
                     <button class="btn btn-primary">
                         <b>Pay</b> $ <span id="payAmount">2.15</span>
                     </button>
+                    </form>
 
                 </section>
 
