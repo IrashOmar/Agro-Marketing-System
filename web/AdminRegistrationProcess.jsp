@@ -41,6 +41,6 @@ catch(Exception e)
 System.out.print(e);
 e.printStackTrace();
 }
-response.sendRedirect("index.html");
+response.sendRedirect("admin.jsp");
 %>
 </html>

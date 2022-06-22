@@ -47,7 +47,7 @@
                             <!-- <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo"/></a> -->
                         </div>
                         <div class="navbar-collapse collapse ">
-                            <ul class="nav navbar-nav">
+                       <ul class="nav navbar-nav">
                                 <li class="active"><a href="FarmerMainPage.html">Home</a></li> 
                                 <!-- <li><a href="about.html">Available</a></li> -->
                                 <li><a href="post.html">Post</a></li>
@@ -55,9 +55,8 @@
                                 <!-- <li><a href="portfolio.html">Categories</a></li> -->
                                 <li><a href="FarmerFeedback.jsp">Feedback</a></li>
                                 <li><a href="OrderList.jsp">Order</a></li>
-                                <li><a href="#">Progress</a></li>
-                                 <li><a href="FarmerProfile.jsp">Profile</a></li>
-
+                                <li><a href="UpdateTreeProgress.jsp">Progress</a></li>
+                                <li><a href="FarmerProfile.jsp">Profile</a></li>
                             </ul>
                         </div>
                     </div>

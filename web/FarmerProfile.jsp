@@ -75,10 +75,10 @@
                 <div class="col-8">
                   <h3 class="mb-0">My account</h3>
                 </div>
-                <div class="col-4 text-right">
+<!--                <div class="col-4 text-right">
                     <a href="#!" class="btn btn-sm btn-primary">Edit&nbsp;&nbsp;&nbsp;&nbsp;  </a>
                    <a href="#!" class="btn btn-sm btn-primary">Log Out</a>
-                </div>
+                </div>-->
               </div>
             </div>
             <div class="card-body">
@@ -194,6 +194,11 @@
                         <input id="input-address" class="form-control form-control-alternative" placeholder="Phone Number" value="<%=res.getString("filename")%>" type="text">
                       </div>
                 </div>
+                          <div class="col-4 text-right">
+                                        <a href ='EditFarmer.jsp?u=<%=res.getString("farId")%>' class="btn btn-sm btn-primary">Edit&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                        
+                                        <a href="#!" class="btn btn-sm btn-primary">Log Out</a>
+                                    </div>
                 <br><br>
                     <%
                 }

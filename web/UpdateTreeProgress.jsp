@@ -1,3 +1,10 @@
+<%-- 
+    Document   : UpdateTreeProgress
+    Created on : Jun 22, 2022, 1:38:15 PM
+    Author     : User
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -34,7 +41,7 @@
                             <!-- <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo"/></a> -->
                         </div>
                         <div class="navbar-collapse collapse ">
-                             <ul class="nav navbar-nav">
+                            <ul class="nav navbar-nav">
                                 <li class="active"><a href="FarmerMainPage.html">Home</a></li> 
                                 <!-- <li><a href="about.html">Available</a></li> -->
                                 <li><a href="post.html">Post</a></li>
@@ -53,7 +60,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h2 class="pageTitle">Post Your Advertisement</h2>
+                            <h2 class="pageTitle">Update Tree Progress</h2>
                         </div>
                     </div>
                 </div>
@@ -114,21 +121,22 @@
                                         <i class=" form-control-feedback"></i>
                                     </div>
                                     <div class="form-group has-feedback">
-                                        <label for="Avail_quantity"> Quantity Available*</label>
+                                        <label for="Avail_quantity"> Status*</label>
                                         <input type="text" class="form-control" name="Avail_quantity" placeholder="">
                                         <i class=" form-control-feedback"></i>
                                     </div>
                                     <div class="form-group has-feedback">
-                                        <label for="Price"> Price*</label>
+                                        <label for="Price"> Fruit Produced(kg)*</label>
                                         <input type="text" class="form-control" name="Price" placeholder="">
                                         <i class=" form-control-feedback"></i>
                                     </div>
 
                                     <div class="form-group has-feedback">
-                                        <label for="Location"> Location*</label>
+                                        <label for="Location">Profit*</label>
                                         <input type="text" class="form-control" name="Location" placeholder="">
                                         <i class=" form-control-feedback"></i>
                                     </div>
+                                    
 
                                     <!--                                    <div class="form-group has-feedback">
                                                                             <label for="Details">Details</label>
@@ -136,7 +144,7 @@
                                                                             <i class="fa fa-pencil form-control-feedback"></i>
                                                                         </div>-->
                                     <div class="form-group has-feedback">
-                                        <label for="Experience"> Farming Experience*</label>
+                                        <label for="Experience"> Date*</label>
                                         <input type="text" class="form-control" name="Experience" placeholder="">
                                         <i class=" form-control-feedback"></i>
                                     </div>

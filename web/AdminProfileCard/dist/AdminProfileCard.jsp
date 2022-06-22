@@ -94,8 +94,11 @@
                         <i class="fa fa-behance"></i>
                     </a>
                 </li>
+                  <a href ='editAdminProfile.jsp?u=<%=res.getString("Aid")%>' class="btn btn-sm btn-primary">Edit&nbsp;&nbsp;&nbsp;&nbsp;</a>
             </ul>
+          
         </aside>
+                 
         <%
                 }
             } catch (NullPointerException e) {

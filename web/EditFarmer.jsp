@@ -1,3 +1,12 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+         pageEncoding="ISO-8859-1"%>
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -34,7 +43,7 @@
                             <!-- <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo"/></a> -->
                         </div>
                         <div class="navbar-collapse collapse ">
-                             <ul class="nav navbar-nav">
+                            <ul class="nav navbar-nav">
                                 <li class="active"><a href="FarmerMainPage.html">Home</a></li> 
                                 <!-- <li><a href="about.html">Available</a></li> -->
                                 <li><a href="post.html">Post</a></li>
@@ -42,7 +51,7 @@
                                 <!-- <li><a href="portfolio.html">Categories</a></li> -->
                                 <li><a href="FarmerFeedback.jsp">Feedback</a></li>
                                 <li><a href="OrderList.jsp">Order</a></li>
-                                <li><a href="UpdateTreeProgress.jsp">Progress</a></li>
+                                <li><a href="#">Progress</a></li>
                                 <li><a href="FarmerProfile.jsp">Profile</a></li>
                             </ul>
                         </div>
@@ -75,58 +84,77 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do tempor.</p>
                             <div class="done">
                                 <div class="alert alert-success">
-                                    <button type="button" class="close" data-dismiss="alert">Ã—</button>
+                                    <button type="button" class="close" data-dismiss="alert">×</button>
                                     Your message has been sent. Thank you!
                                 </div>
                             </div>
+                            <%
+                                String host = "jdbc:mysql://localhost:3306/test";
+                                Connection conn = null;
+                                Statement stat = null;
+                                ResultSet res = null;
+                                PreparedStatement stmt = null;
+                                Class.forName("com.mysql.jdbc.Driver").newInstance();
+                                conn = DriverManager.getConnection(host, "root", "admin");
+
+                            %>
                             <div class="contact-form">
 
-                                <form method="post" action="FileUploadServlet" id="contactform" class="contact" enctype ="multipart/form-data">
+                                <form method="post" action="" >
+                                    <%                                         stat = conn.createStatement();
+                                        String u = request.getParameter("u");
+//                        int num = Integer.parseInt(u);
+                                        String data = "select * from farmerregistrationtest where farId='" + u + "'";
+                                        res = stat.executeQuery(data);
+                                        while (res.next()) {
+
+
+                                    %>
+
+                                    <!--                                    <div class="form-group has-feedback">
+                                                                            <label for="ProductName">Choose Your Tree*</label>
+                                                                            <select id="cars" name="ProductName" class="form-control">
+                                                                                <option value="1">Apple</option>
+                                                                                <option value="2">Banana</option>
+                                                                                <option value="3">Broccoli</option>
+                                                                                <option value="4">Cucumber</option>
+                                                                                <option value="5">Durian</option> comment 
+                                                                                <option value="6">Grape</option> comment 
+                                                                                <option value="7">Kiwi</option> comment 
+                                                                                <option value="8">Strawberry</option>
+                                                                            </select>-->
+                                    <!-- <input type="email" class="form-control" name="email" placeholder=""> -->
+                                    <!--                                        <i class=" form-control-feedback"></i>
+                                                                        </div>-->
+                                    <!--                                    <div class="form-group has-feedback">
+                                                                            <label for="Category">Category*</label>
+                                                                            <select id="cars" name="Category" class="form-control">
+                                                                                <option value="1">Locals</option>
+                                                                                <option value="2">Imports</option>
+                                                                                <option value="3">Vegetables</option>
+                                                                            </select>
+                                                                             <input type="email" class="form-control" name="email" placeholder=""> 
+                                                                            <i class=" form-control-feedback"></i>
+                                                                        </div>-->
+                                    <div class="form-group has-feedback">
+                                        <label for="Email"> Email*</label>
+                                        <input type="text" class="form-control" name="email" placeholder="" value="<%=res.getString("email")%>">
+                                        <i class=" form-control-feedback"></i>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <label for="Ic"> Name*</label>
+                                        <input type="text" class="form-control" name="Name" placeholder="" value="<%=res.getString("Name")%>">
+                                        <i class=" form-control-feedback"></i>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <label for="Price"> Password*</label>
+                                        <input type="password" class="form-control" name="password" placeholder="" value="<%=res.getString("password")%>">
+                                        <i class=" form-control-feedback"></i>
+                                    </div>
 
                                     <div class="form-group has-feedback">
-                                        <label for="ProductName">Choose Your Tree*</label>
-                                        <select id="cars" name="ProductName" class="form-control">
-                                            <option value="1">Apple</option>
-                                            <option value="2">Banana</option>
-                                            <option value="3">Broccoli</option>
-                                            <option value="4">Cucumber</option>
-                                            <option value="5">Durian</option><!-- comment -->
-                                            <option value="6">Grape</option><!-- comment -->
-                                            <option value="7">Kiwi</option><!-- comment -->
-                                            <option value="8">Strawberry</option>
-                                        </select>
-                                        <!-- <input type="email" class="form-control" name="email" placeholder=""> -->
-                                        <i class=" form-control-feedback"></i>
-                                    </div>
-                                    <div class="form-group has-feedback">
-                                        <label for="Category">Category*</label>
-                                        <select id="cars" name="Category" class="form-control">
-                                            <option value="1">Locals</option>
-                                            <option value="2">Imports</option>
-                                            <option value="3">Vegetables</option>
-                                        </select>
-                                        <!-- <input type="email" class="form-control" name="email" placeholder=""> -->
-                                        <i class=" form-control-feedback"></i>
-                                    </div>
-                                    <div class="form-group has-feedback">
-                                        <label for="FarmName"> Farm Name*</label>
-                                        <input type="text" class="form-control" name="FarmName" placeholder="">
-                                        <i class=" form-control-feedback"></i>
-                                    </div>
-                                    <div class="form-group has-feedback">
-                                        <label for="Avail_quantity"> Quantity Available*</label>
-                                        <input type="text" class="form-control" name="Avail_quantity" placeholder="">
-                                        <i class=" form-control-feedback"></i>
-                                    </div>
-                                    <div class="form-group has-feedback">
-                                        <label for="Price"> Price*</label>
-                                        <input type="text" class="form-control" name="Price" placeholder="">
-                                        <i class=" form-control-feedback"></i>
-                                    </div>
-
-                                    <div class="form-group has-feedback">
-                                        <label for="Location"> Location*</label>
-                                        <input type="text" class="form-control" name="Location" placeholder="">
+                                        <label for="address"> Address*</label>
+                                        <input type="text" class="form-control" name="address" placeholder="" value="<%=res.getString("address")%>">
                                         <i class=" form-control-feedback"></i>
                                     </div>
 
@@ -136,19 +164,41 @@
                                                                             <i class="fa fa-pencil form-control-feedback"></i>
                                                                         </div>-->
                                     <div class="form-group has-feedback">
-                                        <label for="Experience"> Farming Experience*</label>
-                                        <input type="text" class="form-control" name="Experience" placeholder="">
+                                        <label for="phone">Phone Number*</label>
+                                        <input type="text" class="form-control" name="phone" value="<%=res.getString("phone")%>">
                                         <i class=" form-control-feedback"></i>
                                     </div>
                                     <div class="form-group has-feedback">
-                                        <label for="name"> Product Image*</label>
-                                        <input type="file" class="form-control" name="file" placeholder="">
+                                        <label for="filename"> Farm Certificate*</label>
+                                        <input type="text" class="form-control" name="filename" value="<%=res.getString("filename")%>">
                                         <i class=" form-control-feedback"></i>
                                     </div>
 
 
                                     <input type="submit" value="Submit" id="submit" class="submit btn btn-default">
+                                     <a href='deleteFarmer.jsp?d=<%=res.getString("farId")%>' class="btn btn-danger">Delete</a><!-- comment -->
                                 </form>
+                                        <%
+        String a = request.getParameter("u");
+        String b = request.getParameter("email");
+        String c = request.getParameter("Name");
+        String d = request.getParameter("password");
+        String e = request.getParameter("address");
+        String f = request.getParameter("phone");
+        String g = request.getParameter("filename");
+
+
+        if (a != null && b != null && c != null && d != null  && e != null && f != null && g != null){
+             String query = "update farmerregistrationtest set email='" + b + "',Name='" + c + "',password='" + d + "',address='" + e + "',phone='" + f + "',filename='" + g + "' where farId='" + a + "'";
+            stmt = conn.prepareStatement(query);
+
+            stmt.executeUpdate();
+            response.sendRedirect("FarmerProfile.jsp");
+        } else {
+
+        }
+    }
+%>
 
 
                             </div>
@@ -262,3 +312,4 @@
         <script src="js/validate.js"></script>
     </body>
 </html>
+
