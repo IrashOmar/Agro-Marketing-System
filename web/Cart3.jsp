@@ -112,7 +112,7 @@
                     </div>
 
                     <button class="btn btn-primary">
-                        <b>Pay</b> $ <span id="payAmount">2.15</span>
+                        <b>Pay</b> $ <span id="payAmount"></span>
                     </button>
 
                 </section>

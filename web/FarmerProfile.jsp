@@ -1,3 +1,9 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -76,6 +82,30 @@
               </div>
             </div>
             <div class="card-body">
+                  <%
+
+            try {
+                String host = "jdbc:mysql://localhost:3306/test";
+                Connection conn = null;
+                Statement stat = null;
+                ResultSet res = null;
+                String Name = request.getParameter("Name");
+                String email = request.getParameter("email");
+                String password = request.getParameter("password");
+                String address = request.getParameter("address");
+                String phone = request.getParameter("phone");
+                String filename = request.getParameter("filename");
+
+
+                Class.forName("com.mysql.jdbc.Driver");
+                conn = DriverManager.getConnection(host, "root", "admin");
+                stat = conn.createStatement();
+                String data = "select * from farmerregistrationtest";
+                res = stat.executeQuery(data);
+                while (res.next()) {
+                    //                                String filename = res.getString("filename");
+
+        %>
               <form>
                 <h6 class="heading-small text-muted mb-4">User information</h6>
                 <div class="pl-lg-4">
@@ -83,7 +113,7 @@
                    <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="input-email">Email</label>
-                        <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="jesse@example.com">
+                        <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="jesse@example.com" value="<%=res.getString("email")%>">
                       </div>
                     </div>
                     <div class="col-lg-6">
@@ -96,14 +126,14 @@
                   <div class="row">
                     <div class="col-lg-6">
                       <div class="form-group focused">
-                        <label class="form-control-label" for="input-first-name">Farm Name</label>
-                        <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name" value="Lucky">
+                        <label class="form-control-label" for="input-first-name">Name</label>
+                        <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name" value="<%=res.getString("Name")%>">
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group focused">
-                        <label class="form-control-label" for="input-last-name">Password</label>
-                        <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" value="Jesse">
+                        <label class="form-control-label" for="input-last-name">password</label>
+                        <input type="password" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" value="<%=res.getString("password")%>">
                       </div>
                     </div>
                   </div>
@@ -117,13 +147,13 @@
                     <div class="col-md-12">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-address">Address</label>
-                        <input id="input-address" class="form-control form-control-alternative" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09" type="text">
+                        <input id="input-address" class="form-control form-control-alternative" placeholder="Home Address" value="<%=res.getString("address")%>">
                       </div>
                     </div>
                        <div class="col-md-12">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-no">Phone Number</label>
-                        <input id="input-address" class="form-control form-control-alternative" placeholder="Phone Number" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09" type="text">
+                        <input id="input-address" class="form-control form-control-alternative" placeholder="Phone Number" value="<%=res.getString("phone")%>" type="text">
                       </div>
                     </div>
                   </div>
@@ -161,10 +191,17 @@
                 <div class="pl-lg-4">
                    <div class="form-group focused">
                         <label class="form-control-label" for="input-no">Farm Certificate</label>
-                        <input id="input-address" class="form-control form-control-alternative" placeholder="Phone Number" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09" type="text">
+                        <input id="input-address" class="form-control form-control-alternative" placeholder="Phone Number" value="<%=res.getString("filename")%>" type="text">
                       </div>
                 </div>
                 <br><br>
+                    <%
+                }
+            } catch (NullPointerException e) {
+                System.out.println("Error at detail: " + e.getStackTrace().toString());
+                e.printStackTrace();
+            }
+        %>
               </form>
                 </section>
 <!--                    <div class="row gutters-sm">

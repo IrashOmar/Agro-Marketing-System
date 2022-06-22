@@ -61,16 +61,16 @@
 //                    while(resultSet4.next()) {
 //                        
 //                    }
-                    resultSet4.next();
-                    String quantityOri=resultSet4.getString("Avail_quantity");
-                    int quantityOriginal=Integer.parseInt(quantityOri);
-                    int qNew=Integer.parseInt(q);
-
-                    int quantityNew=quantityOriginal - qNew;
-                     String quantityNew1=String.valueOf(quantityNew);
-                     String query = "update trybackend set Avail_quantity='"+quantityNew1+"' where id='"+id+"'";
-                    stmt = connection.prepareStatement(query);
-                    stmt.executeUpdate();
+//                    resultSet4.next();
+//                    String quantityOri=resultSet4.getString("Avail_quantity");
+//                    int quantityOriginal=Integer.parseInt(quantityOri);
+//                    int qNew=Integer.parseInt(q);
+//
+//                    int quantityNew=quantityOriginal - qNew;
+//                     String quantityNew1=String.valueOf(quantityNew);
+//                     String query = "update trybackend set Avail_quantity='"+quantityNew1+"' where id='"+id+"'";
+//                    stmt = connection.prepareStatement(query);
+//                    stmt.executeUpdate();
                    
                     %>
                     

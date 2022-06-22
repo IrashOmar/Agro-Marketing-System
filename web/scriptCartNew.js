@@ -1,7 +1,8 @@
 'use strict';
 
 // all initial elements
-const payAmountBtn = document.querySelector('#payAmount');
+    console.log("abu");
+    const payAmountBtn = document.querySelector('#payAmount');
 const decrementBtn = document.querySelectorAll('#decrement');
 const quantityElem = document.querySelectorAll('#quantity');
 const incrementBtn = document.querySelectorAll('#increment');
@@ -10,11 +11,12 @@ const subtotalElem = document.querySelector('#subtotal');
 const taxElem = document.querySelector('#tax');
 const totalElem = document.querySelector('#total');
 
-
 // loop: for add event on multiple `increment` & `decrement` button
 for (let i = 0; i < incrementBtn.length; i++) {
 
   incrementBtn[i].addEventListener('click', function () {
+console.log($(this).attr('name'));
+var index =$(this).attr('name');
 
     // collect the value of `quantity` textContent,
     // based on clicked `increment` button sibling.
@@ -26,14 +28,34 @@ for (let i = 0; i < incrementBtn.length; i++) {
     // show the `increment` variable value on `quantity` element
     // based on clicked `increment` button sibling.
     this.previousElementSibling.textContent = increment;
-
+    
+    $.ajax({
+                        type:"post",
+                        cache:false,
+                        url:"updateQuantity.jsp",
+                        data:{
+                            updateCart:increment,
+                            cartid:index
+                        },
+                        success:function(response){
+                            if(response){
+//                                setTimeout(, 5000);
+                            } else{
+                                alert('not succesfully');
+                                window.open("_self");
+                            }
+                        },
+                        error: function(jqXHR, textStatus, errorThrown){
+                            console.log(textStatus, errorThrown);
+                        }
+                    });
     totalCalc();
 
   });
 
 
   decrementBtn[i].addEventListener('click', function () {
-
+  var index1 =$(this).attr('name');
     // collect the value of `quantity` textContent,
     // based on clicked `decrement` button sibling.
     let decrement = Number(this.nextElementSibling.textContent);
@@ -44,7 +66,26 @@ for (let i = 0; i < incrementBtn.length; i++) {
     // show the `decrement` variable value on `quantity` element
     // based on clicked `decrement` button sibling.
     this.nextElementSibling.textContent = decrement;
-
+ $.ajax({
+                        type:"post",
+                        cache:false,
+                        url:"updateQuantity.jsp",
+                        data:{
+                            updateCart:decrement,
+                            cartid:index1
+                        },
+                        success:function(response){
+                            if(response){
+//                                setTimeout(, 5000);
+                            } else{
+                                alert('not succesfully');
+                                window.open("_self");
+                            }
+                        },
+                        error: function(jqXHR, textStatus, errorThrown){
+                            console.log(textStatus, errorThrown);
+                        }
+                    });
     totalCalc();
 
   });
@@ -84,5 +125,7 @@ const totalCalc = function () {
   // show the `total` variable value on `totalElem` & `payAmountBtn` element
   totalElem.textContent = total.toFixed(2);
   payAmountBtn.textContent = total.toFixed(2);
+  
 
 }
+

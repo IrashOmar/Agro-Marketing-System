@@ -23,6 +23,8 @@
         <link
             href="https://fonts.googleapis.com/css?family=Source+Sans+3:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
             rel="stylesheet" />
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
     </head>
 
     <body>
@@ -176,13 +178,13 @@
                                     <div class="wrapper">
 
                                         <div class="product-qty">
-                                            <button id="decrement">
+                                            <button id="decrement"name="<%=resultSet1.getString("cart_id")%>">
                                                 <ion-icon name="remove-outline"></ion-icon>
                                             </button>
 
                                             <span id="quantity"><%=resultSet1.getString("quantity")%></span>
 
-                                            <button id="increment">
+                                            <button id="increment" name="<%=resultSet1.getString("cart_id")%>">
                                                 <ion-icon name="add-outline"></ion-icon>
                                             </button>
                                         </div>
@@ -280,9 +282,9 @@
                         <span>Tax</span> <span>$ <span id="tax">0.10</span></span>
                     </div>
 
-                    <div class="shipping">
+<!--                    <div class="shipping">
                         <span>Shipping</span> <span>$ <span id="shipping">0.00</span></span>
-                    </div>
+                    </div>-->
 
                     <div class="total">
                         <span>Total</span> <span>$ <span id="total">2.15</span></span>
