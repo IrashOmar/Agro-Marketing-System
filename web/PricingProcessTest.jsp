@@ -18,16 +18,20 @@ pageEncoding="ISO-8859-1"%>
 <%
 
 
-int id ;
-id = Integer.parseInt(request.getParameter("tree_id"));
-String ProductName =request.getParameter("ProductName");
+int id = Integer.parseInt(request.getParameter("id"));
+int farId = Integer.parseInt(request.getParameter("farId"));
+//int tree_id = Integer.parseInt(request.getParameter("tree_id"));
+//String ProductName =request.getParameter("ProductName");
 try
 {
 Class.forName("com.mysql.jdbc.Driver");
 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "admin");
 Statement st=conn.createStatement();
+Statement st2=conn.createStatement();
+//int f=st2.executeUpdate("select from trybackend2");
 
-int i=st.executeUpdate("insert into cart(tree_id,quantity)values('"+id+"','"+1+"')");
+
+int i=st.executeUpdate("insert into carttest(id,farId,quantity,TotalPrice)values('"+id+"','"+farId+"','"+1+"','"+0+"')");
 //int i=st.executeUpdate("insert into cart(tree_id,ProductName,quantity)values('"+id+"','"+ProductName+"','"+1+"')");
 }
 catch(Exception e)
@@ -35,7 +39,7 @@ catch(Exception e)
 System.out.print(e);
 e.printStackTrace();
 }
-response.sendRedirect("Category2.jsp?tree_id="+id);
+response.sendRedirect("CategoryTest.jsp?id="+id);
 %>
 <!--<script>window.open("edit.jsp");</script>-->
     </body>

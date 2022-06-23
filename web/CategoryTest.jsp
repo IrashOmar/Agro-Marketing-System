@@ -1,8 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-           
- <!DOCTYPE html>
+
+
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+         pageEncoding="ISO-8859-1"%>
+
+
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -42,11 +49,14 @@
                             <ul class="nav navbar-nav">
                                 <li class="active"><a href="index.html">Home</a></li> 
                                 <!-- <li><a href="about.html">Available</a></li> -->
-                                <li><a href="Category.html">Categories</a></li>
-                                <li class="active"><a href="services.html">Reading Section</a></li>
+                                <li><a href="Category2.jsp">Categories</a></li>
+                                <li><a href="ReadingSection.jsp">Reading Section</a></li>
                                 <!-- <li><a href="portfolio.html">Categories</a></li> -->
-                                <li><a href="pricing.html">Available Farm</a></li>
-                                <li><a href="Feedback.html">Cart</a></li>
+                                <li><a href="Feedback.jsp">Feedback</a></li>
+                                <li><a href="Trading/ranking.jsp">Trading</a></li>
+                                 <li><a href="CartNew.jsp">Cart</a></li>
+                                 <li><a href="BuyerProfile.jsp">Profile</a></li>
+
                             </ul>
                         </div>
                     </div>
@@ -77,6 +87,16 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
+                            <ul class="portfolio-categ">
+                                <li class="all active"><a href="#">All</a></li>
+                                <li class="web"><a href="Category2.jsp?cat_id=1" class="nav-link text-dark">Imports</a></li>
+                                <li class="icon"><a href="Category2.jsp?cat_id=2" class="nav-link text-dark">Locals</a></li>
+                                <li class="graphic"><a href="Category2.jsp?cat_id=3" class="nav-link text-dark">Vegetables</a></li>
+                            </ul>
+                        </div>
+<!--                         <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
                             <ul class="portfolio-categ filter">
                                 <li class="all active"><a href="#">All</a></li>
                                 <li class="web"><a href="#" title="">Imports</a></li>
@@ -85,99 +105,72 @@
                             </ul>
                             <div class="clearfix">
                             </div>
+                        -->
+                        
+ 
+
+                            <div class="clearfix">
+                            </div>
                             <div class="row">
                                 <section id="projects">
                                     <ul id="thumbs" class="portfolio">
                                         <!-- Item Project and Filter Name -->
+                    <%
+           
+            try {
+             String host = "jdbc:mysql://localhost:3306/test";
+                        Connection conn = null;
+                        Statement stat = null;
+                        ResultSet res = null;
+                       String cat_id=request.getParameter("cart_id");
+                       
+                   
+                     
+                        
+                        Class.forName("com.mysql.jdbc.Driver");
+                        conn = DriverManager.getConnection(host,"root","admin");
+                        stat = conn.createStatement();
+                        String data = "select * from tree2";
+                        res = stat.executeQuery(data);
+                        while(res.next()){
+                         String filename = res.getString("filename");
+                  
+                   %>
+                  
+                   <script>
+                       console.log("abu");
+                   </script><!-- comment -->
+               
                                         <li class="item-thumbs col-lg-3 design" data-id="id-0" data-type="web">
                                             <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                                            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Penang Tropical Farm" href="pricing.html">
+                                            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Penang Tropical Farm" href="PricingTest.jsp?tree_id=<%=res.getString("tree_id")%>">
                                                 <span class="overlay-img" ></span>
                                                 <span class="overlay-img-thumb"><i class="icon-info-blocks fa fa-search"></i></span> 
 
                                             </a>
+
                                             <!-- Thumb Image and Description -->
-                                            <img src="img/durianResize.jpg" alt="" href=""><h2>Apple</h2>
-                                        </li>
-                                        <!-- End Item Project -->
-                                        <!-- Item Project and Filter Name -->
-                                        <li class="item-thumbs col-lg-3 design" data-id="id-1" data-type="icon">
-                                            <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                                            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="pricing.html"">
-                                                <span class="overlay-img"></span>
-                                                <span class="overlay-img-thumb"><i class="icon-info-blocks fa fa-search"></i></span>
-                                            </a>
-                                            <!-- Thumb Image and Description -->
-                                            <img src="img/durianResize.jpg" alt=""><h2>Rambutan</h2>
-                                        </li>
-                                        <!-- End Item Project -->
-                                        <!-- Item Project and Filter Name -->
-                                        <li class="item-thumbs col-lg-3 photography" data-id="id-2" data-type="graphic">
-                                            <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                                            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="pricing.html"">
-                                                <span class="overlay-img"></span>
-                                                <span class="overlay-img-thumb"><i class="icon-info-blocks fa fa-search"></i></span>
-                                            </a>
-                                            <!-- Thumb Image and Description -->
-                                            <img src="img/durianResize.jpg" alt=""><h2>Brocolli</h2>
-                                        </li>
-                                        <!-- End Item Project -->
-                                        <!-- Item Project and Filter Name -->
-                                        <li class="item-thumbs col-lg-3 design" data-id="id-0" data-type="web">
-                                            <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                                            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="pricing.html"">
-                                                <span class="overlay-img"></span>
-                                                <span class="overlay-img-thumb"><i class="icon-info-blocks fa fa-search"></i></span>
-                                            </a>
-                                            <!-- Thumb Image and Description -->
-                                            <img src="img/durianResize.jpg" alt=""><h2>Strawberry</h2>
-                                        </li>
-                                        <!-- End Item Project -->
-                                        <!-- Item Project and Filter Name -->
-                                        <li class="item-thumbs col-lg-3 photography" data-id="id-4" data-type="web">
-                                            <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                                            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="pricing.html"">
-                                                <span class="overlay-img"></span>
-                                                <span class="overlay-img-thumb"><i class="icon-info-blocks fa fa-search"></i></span>
-                                            </a>
-                                            <!-- Thumb Image and Description -->
-                                            <img src="img/durianResize.jpg" alt=""><h2>Grape</h2>
-                                        </li>
-                                        <!-- End Item Project -->
-                                        <!-- Item Project and Filter Name -->
-                                        <li class="item-thumbs col-lg-3 photography" data-id="id-5" data-type="icon">
-                                            <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                                            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="pricing.html"">
-                                                <span class="overlay-img"></span>
-                                                <span class="overlay-img-thumb"><i class="icon-info-blocks fa fa-search"></i></span>
-                                            </a>
-                                            <!-- Thumb Image and Description -->
-                                            <img src="img/durianResize.jpg" alt=""><h2>Durian</h2>
-                                        </li>
-                                        <!-- End Item Project -->
-                                        <li class="item-thumbs col-lg-3 design" data-id="id-0" data-type="web">
-                                            <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                                            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="pricing.html"">
-                                                <span class="overlay-img"></span>
-                                                <span class="overlay-img-thumb"><i class="icon-info-blocks fa fa-search"></i></span>
-                                            </a>
-                                            <!-- Thumb Image and Description -->
-                                            <img src="img/durianResize.jpg" alt=""><h2>Kiwi</h2>
-                                        </li>
-                                        <!-- End Item Project -->
-                                        <!-- Item Project and Filter Name -->
-                                        <li class="item-thumbs col-lg-3 design" data-id="id-0" data-type="graphic">
-                                            <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                                            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="pricing.html"">
-                                                <span class="overlay-img"></span>
-                                                <span class="overlay-img-thumb"><i class="icon-info-blocks fa fa-search"></i></span>
-                                            </a>
-                                            <!-- Thumb Image and Description -->
-                                            <img src="img/durianResize.jpg" alt=""><h2>Cucumber</h2>
-                                        </li>
-                                        <!-- End Item Project -->
-                                    </ul>
+                                            <image src="img/<%=filename%>"> <h2><%=res.getString("ProductName")%></h2>      
+                                            
+     
+                               
+              <%
+               }
+            } catch (NullPointerException e) {
+               System.out.println("Error at detail: " + e.getStackTrace().toString());
+               e.printStackTrace();
+            } 
+        %>
+
+                                 
+                      </li>      
+                                 
                                 </section>
+        
+   <!-- comment -->
+        
+
+
                             </div>
                         </div>
                     </div>
