@@ -1,5 +1,11 @@
 
 <!DOCTYPE html>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.*,java.util.*"%>
+<%@page import="java.text.DecimalFormat" %>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -45,12 +51,12 @@
                             <ul class="nav navbar-nav">
                                 <li class="active"><a href="../index.html">Home</a></li> 
                                 <!-- <li><a href="about.html">Available</a></li> -->
-                                <li><a href="../Category2.jsp">Categories</a></li>
+                                <li><a href="../CategoryTest.jsp">Categories</a></li>
                                 <li><a href="../ReadingSection.jsp">Readings</a></li>
                                 <!-- <li><a href="portfolio.html">Categories</a></li> -->
                                 <li><a href="../Feedback.jsp">Feedback</a></li>
                                 <li><a href="ranking.jsp">Trading</a></li>
-                                <li><a href="../CartNew.jsp">Cart</a></li>
+                                <li><a href="../CartTest.jsp">Cart</a></li>
                                 <li><a href="../BuyerProfile.jsp">Profile</a></li></ul>
                         </div>
                     </div>
@@ -90,15 +96,61 @@
             <!-- ============================================================== -->
             <!-- pagehader  -->
             <!-- ============================================================== -->
+            
+                 <%
+
+                                    try {
+                                        String host = "jdbc:mysql://localhost:3306/test";
+                                        Connection conn = null;
+                                        Statement stat = null;
+                                        ResultSet res = null;
+//                                        String Name = request.getParameter("name");
+//                                        String email = request.getParameter("email");
+//                                        String password = request.getParameter("password");
+//                                        String ic = request.getParameter("ic");
+//
+//                                        String address = request.getParameter("address");
+//                                        String phone = request.getParameter("phone");
+//                                        String filename = request.getParameter("filename");
+
+                                        Class.forName("com.mysql.jdbc.Driver");
+                                        conn = DriverManager.getConnection(host, "root", "admin");
+                                        stat = conn.createStatement();
+                                        String data = "select * from treeprogress";
+                                        res = stat.executeQuery(data);
+                                        while (res.next()) {
+                                            String Profit = res.getString("Profit");
+                                            int x = Integer.parseInt(Profit);
+                                            String quantity = res.getString("Quantity");
+                                            int y = Integer.parseInt(quantity);
+                                            String TotalPrice = res.getString("TotalPrice");
+                                            double z = Double.parseDouble(TotalPrice);
+                                            int total = x * y;
+                                            double growth = (x/z)*100;
+                                            String Total1= String.valueOf(x);
+                                            
+                                            DecimalFormat df = new DecimalFormat("#.##");
+                                            String formatted = df.format(growth); 
+                                            
+                                            
+                                            String growth1= String.valueOf(formatted);
+
+
+                                            
+                                            
+                                            
+                                            //                                String filename = res.getString("filename");
+
+                                %>
 
             <div class="row">
                 <!-- metric -->
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="text-muted">Total Trees Bought</h5>
+                            <h5 class="text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total Earnings</h5>
                             <div class="metric-value d-inline-block">
-                                <h1 class="mb-1 text-primary">32,100 </h1>
+                                <h1 class="mb-1 text-primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RM<%=Total1%> </h1>
                             </div>
                             <div class="metric-label d-inline-block float-right text-success">
                                 <i class="fa fa-fw fa-caret-up"></i><span>5.27%</span>
@@ -109,28 +161,32 @@
                 </div>
                 <!-- /. metric -->
                 <!-- metric -->
-                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="text-muted">Deposit</h5>
+                            <h5 class="text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Growth</h5>
                             <div class="metric-value d-inline-block">
-                                <h1 class="mb-1 text-primary">4,200 </h1>
+                                <h1 class="mb-1 text-primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+<%=growth1%>% </h1>
                             </div>
-                            <div class="metric-label d-inline-block float-right text-danger">
+                            <div class="metric-label d-inline-block float-right text-success">
+                                <i class="fa fa-fw fa-caret-up"></i><span>4.87%</span>
+                            </div>
+                        </div>
+<!--                            <div class="metric-label d-inline-block float-right text-danger">
                                 <i class="fa fa-fw fa-caret-down"></i><span>1.08%</span>
-                            </div>
+                            </div>-->
                         </div>
                         <div id="sparkline-2"></div>
                     </div>
                 </div>
                 <!-- /. metric -->
                 <!-- metric -->
-                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+<!--                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="text-muted">Total Asset</h5>
+                            <h5 class="text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total Asset</h5>
                             <div class="metric-value d-inline-block">
-                                <h1 class="mb-1 text-primary">RM 5,656</h1>
+                                <h1 class="mb-1 text-primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RM 5,656</h1>
                             </div>
                             <div class="metric-label d-inline-block float-right text-danger">
                                 <i class="fa fa-fw fa-caret-down"></i><span>7.00%</span>
@@ -139,15 +195,15 @@
                         <div id="sparkline-3">
                         </div>
                     </div>
-                </div>
+                </div>-->
                 <!-- /. metric -->
                 <!-- metric -->
-                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+<!--                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="text-muted">Growth</h5>
+                            <h5 class="text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Growth</h5>
                             <div class="metric-value d-inline-block">
-                                <h1 class="mb-1 text-primary">+28.45% </h1>
+                                <h1 class="mb-1 text-primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+28.45% </h1>
                             </div>
                             <div class="metric-label d-inline-block float-right text-success">
                                 <i class="fa fa-fw fa-caret-up"></i><span>4.87%</span>
@@ -155,7 +211,7 @@
                         </div>
                         <div id="sparkline-4"></div>
                     </div>
-                </div>
+                </div>-->
                 <!-- /. metric -->
             </div>
             <!-- ============================================================== -->
@@ -164,7 +220,7 @@
             <!-- <div class="row"> -->
             <!-- <div class="col-xl-8 col-lg-12 col-md-8 col-sm-12 col-12" > -->
 
-            <div class="card">
+<!--            <div class="card">
                 <h5 class="card-header">Revenue</h5>
 
                 <div class="card-body border-top">
@@ -187,7 +243,7 @@
                             <div><span class="legend-text">Previous Week</span></div>
                         </div>
                     </div>
-                </div>
+                </div>-->
 
 
 
@@ -214,20 +270,21 @@
             <!-- ============================================================== -->
             <!-- <div class="col-xl-7 col-lg-12 col-md-12 col-sm-12 col-12"> -->
             <div class="card">
-                <h5 class="card-header">Your Tree Progress</h5>
+                <h5 class="card-header">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Your Tree Progress</h5>
+                <br>
                 <div class="card-body p-0">
                     <div class="table-responsive">
                         <table class="table">
                             <thead class="bg-light">
                                 <tr class="border-0">
-
+                                    <th class="border-0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tree Id</th>
                                     <th class="border-0">Fruit Tree</th>
                                     <th class="border-0">Quantity</th>
                                     <th class="border-0">Status</th>
                                     <th class="border-0">Fruit Produced(kg)</th>
                                     <th class="border-0">Profit(RM)</th>
                                     <th class="border-0">Date</th>
-                                    <th class="border-0">Action</th>
+                                    <th class="border-0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Action</th>
 
                                 </tr>
 
@@ -237,125 +294,30 @@
 
                                 <tr>
 
-
-                                    <td>Durian</td>
-                                    <td>3</td>
-                                    <td>Leaf Growth</td><!-- comment -->
-                                    <td>No Fruits</td><!-- comment -->
-                                    <td>No Profit</td>
-                                    <td>30/3/2022</td>
-                                    <td></td>
-
-
-
-
-
-                                </tr>
-                                <tr>
-
-
-                                    <td>Durian</td>
-                                    <td>3</td>
-                                    <td>Leaf Growth</td><!-- comment -->
-                                    <td>No Fruits</td><!-- comment -->
-                                    <td>No Profit</td>
-                                    <td>30/3/2022</td>d>
-                                    <td></td>
-
-
-
-
-
-                                </tr>
-                                <tr>
-
-
-                                    <td>Durian</td>
-                                    <td>3</td>
-                                    <td>Leaf Growth</td><!-- comment -->
-                                    <td>No Fruits</td><!-- comment -->
-                                    <td>No Profit</td>
-                                    <td>30/3/2022</td>
-                                    <td></td>
-
-
-
-
-
-                                </tr>
-                                <tr>
-
-                                    <td>Durian</td>
-                                    <td>3</td>
-                                    <td>Leaf Growth</td><!-- comment -->
-                                    <td>No Fruits</td><!-- comment -->
-                                    <td>No Profit</td>
-                                    <td>30/3/2022</td>
-                                    <td></td>
-
-
-
-
-                                </tr>
-                                <tr>
-
-
-                                    <td>Durian</td>
-                                    <td>3</td>
-                                    <td>Leaf Growth</td><!-- comment -->
-                                    <td>No Fruits</td><!-- comment -->
-                                    <td>No Profit</td>
-                                    <td>30/3/2022</td>
-                                    <td></td>
-
-
-
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T<%=res.getString("progress_id")%></td>
+                                    <td><%=res.getString("FruitTree")%></td>
+                                    <td><%=res.getString("Quantity")%></td>
+                                    <td><%=res.getString("Status")%></td><!-- comment -->
+                                    <td><%=res.getString("FruitProduced")%></td><!-- comment -->
+                                    <td><%=res.getString("Profit")%></td>
+                                    <td><%=res.getString("Date")%></td>
+                                    <td><a href ="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Export</a><!-- comment -->
+                                        <a href="">&nbsp;&nbsp;&nbsp;Sell</a><!-- comment --></td>
 
 
                                 </tr>
 
 
-                                <!--                                            <tr>
-                                                                            <td>2</td>
-                                                                            <td>
-                                                                                <div class="m-r-10"><img src="assets/images/product-pic-2.jpg" alt="user" class="rounded" width="45"></div>
-                                                                            </td>
-                                                                            <td>Product #2 </td>
-                                                                            <td>id000002 </td>
-                                                                            <td>12</td>
-                                                                            <td>$180.00</td>
-                                                                            <td>25-08-2018 21:12:56</td>
-                                                                            <td>Rachel J. Wicker </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>3</td>
-                                                                            <td>
-                                                                                <div class="m-r-10"><img src="assets/images/product-pic-3.jpg" alt="user" class="rounded" width="45"></div>
-                                                                            </td>
-                                                                            <td>Product #3 </td>
-                                                                            <td>id000003 </td>
-                                                                            <td>23</td>
-                                                                            <td>$820.00</td>
-                                                                            <td>24-08-2018 14:12:77</td>
-                                                                            <td>Michael K. Ledford </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>4</td>
-                                                                            <td>
-                                                                                <div class="m-r-10"><img src="assets/images/product-pic-4.jpg" alt="user" class="rounded" width="45"></div>
-                                                                            </td>
-                                                                            <td>Product #4 </td>
-                                                                            <td>id000004 </td>
-                                                                            <td>34</td>
-                                                                            <td>$340.00</td>
-                                                                            <td>23-08-2018 09:12:35</td>
-                                                                            <td>Michael K. Ledford </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td colspan="8"><a href="#" class="btn btn-outline-light float-right">View Details</a></td>
-                                                                        </tr>-->
+
                             </tbody>
                         </table>
+                                                             <%
+                }
+            } catch (NullPointerException e) {
+                System.out.println("Error at detail: " + e.getStackTrace().toString());
+                e.printStackTrace();
+            }
+        %>
                     </div>
                 </div>
             </div>

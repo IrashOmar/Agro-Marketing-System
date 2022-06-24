@@ -53,11 +53,11 @@
                      String id3=resultSet.getString("farId");
                       String id4=resultSet.getString("TotalPrice");
                     statement1=connection.createStatement();  
-                    String sql1 ="insert into carttest2(cart_id,id,farId,quantity,TotalPrice)values('"+cart_id+"','"+id2+"','"+id3+"','"+q+"','"+id4+"')";  
+                    String sql1 ="insert into carttest2(cart_id,id,farId,buyId,quantity,TotalPrice)values('"+cart_id+"','"+id2+"','"+id3+"','"+session.getAttribute("buyId")+"','"+q+"','"+id4+"')";  
                     out.println("<script>console.log('mak')</script>");
                     int a = statement1.executeUpdate(sql1);
                      String id=resultSet.getString("id");
-                    String sql4="Select * from trybackend where id="+id;
+                    String sql4="Select * from trybackend2 where id="+id;
                     statement4=connection.createStatement(); 
                     resultSet4 = statement4.executeQuery(sql4);
 //                    while(resultSet4.next()) {

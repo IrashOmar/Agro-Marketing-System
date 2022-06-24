@@ -50,7 +50,7 @@
                             <ul class="nav navbar-nav">
                                  <li class="active"><a href="index.html">Home</a></li> 
                                 <!-- <li><a href="about.html">Available</a></li> -->
-                                <li><a href="Category2.jsp">Categories</a></li>
+                                <li><a href="CategoryTest.jsp">Categories</a></li>
                                 <li><a href="ReadingSection.jsp">Reading Section</a></li>
                                 <!-- <li><a href="portfolio.html">Categories</a></li> -->
                                 <li><a href="Feedback.jsp">Feedback</a></li>

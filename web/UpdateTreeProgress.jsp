@@ -1,10 +1,10 @@
-<%-- 
-    Document   : UpdateTreeProgress
-    Created on : Jun 22, 2022, 1:38:15 PM
-    Author     : User
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+         pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -15,8 +15,7 @@
         <meta name="author" content="http://webthemez.com" />
         <!-- css -->
         <link href="css/bootstrap.min.css" rel="stylesheet" />
-        <link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
-        <link href="css/jcarousel.css" rel="stylesheet" />
+        
         <link href="css/flexslider.css" rel="stylesheet" />
         <link href="css/style.css" rel="stylesheet" />
 
@@ -41,14 +40,14 @@
                             <!-- <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo"/></a> -->
                         </div>
                         <div class="navbar-collapse collapse ">
-                            <ul class="nav navbar-nav">
+                             <ul class="nav navbar-nav">
                                 <li class="active"><a href="FarmerMainPage.html">Home</a></li> 
                                 <!-- <li><a href="about.html">Available</a></li> -->
-                                <li><a href="post.html">Post</a></li>
+                                <li><a href="post2.html">Post</a></li>
                                 <li><a href="ReadingFarmer.jsp">Reading Section</a></li>
                                 <!-- <li><a href="portfolio.html">Categories</a></li> -->
                                 <li><a href="FarmerFeedback.jsp">Feedback</a></li>
-                                <li><a href="OrderList.jsp">Order</a></li>
+                                <li><a href="OrderListTest.jsp">Order</a></li>
                                 <li><a href="UpdateTreeProgress.jsp">Progress</a></li>
                                 <li><a href="FarmerProfile.jsp">Profile</a></li>
                             </ul>
@@ -82,80 +81,54 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do tempor.</p>
                             <div class="done">
                                 <div class="alert alert-success">
-                                    <button type="button" class="close" data-dismiss="alert">Ã—</button>
+                                    <button type="button" class="close" data-dismiss="alert">×</button>
                                     Your message has been sent. Thank you!
                                 </div>
                             </div>
+                            
                             <div class="contact-form">
+     
+                                <form action="UpdateTreeProgressProcess.jsp" method="post">
 
-                                <form method="post" action="FileUploadServlet" id="contactform" class="contact" enctype ="multipart/form-data">
-
-                                    <div class="form-group has-feedback">
-                                        <label for="ProductName">Choose Your Tree*</label>
-                                        <select id="cars" name="ProductName" class="form-control">
-                                            <option value="1">Apple</option>
-                                            <option value="2">Banana</option>
-                                            <option value="3">Broccoli</option>
-                                            <option value="4">Cucumber</option>
-                                            <option value="5">Durian</option><!-- comment -->
-                                            <option value="6">Grape</option><!-- comment -->
-                                            <option value="7">Kiwi</option><!-- comment -->
-                                            <option value="8">Strawberry</option>
-                                        </select>
-                                        <!-- <input type="email" class="form-control" name="email" placeholder=""> -->
+<!--                                      <div class="form-group has-feedback">
+                                        <label for="Purchasement_Id">Purchasement Id*</label>
+                                        <input type="text" class="form-control" name="Purchasement_Id" placeholder="">
+                                        <i class=" form-control-feedback"></i>
+                                    </div>-->
+                                      <div class="form-group has-feedback">
+                                        <label for="FruitTree"> Fruit Tree*</label>
+                                        <input type="text" class="form-control" name="FruitTree" placeholder="">
                                         <i class=" form-control-feedback"></i>
                                     </div>
                                     <div class="form-group has-feedback">
-                                        <label for="Category">Category*</label>
-                                        <select id="cars" name="Category" class="form-control">
-                                            <option value="1">Locals</option>
-                                            <option value="2">Imports</option>
-                                            <option value="3">Vegetables</option>
-                                        </select>
-                                        <!-- <input type="email" class="form-control" name="email" placeholder=""> -->
+                                        <label for="Quantity"> Quantity*</label>
+                                        <input type="text" class="form-control" name="Quantity" placeholder="">
                                         <i class=" form-control-feedback"></i>
                                     </div>
                                     <div class="form-group has-feedback">
-                                        <label for="FarmName"> Farm Name*</label>
-                                        <input type="text" class="form-control" name="FarmName" placeholder="">
+                                        <label for="Status"> Status*</label>
+                                        <input type="text" class="form-control" name="Status" placeholder="">
                                         <i class=" form-control-feedback"></i>
                                     </div>
                                     <div class="form-group has-feedback">
-                                        <label for="Avail_quantity"> Status*</label>
-                                        <input type="text" class="form-control" name="Avail_quantity" placeholder="">
-                                        <i class=" form-control-feedback"></i>
-                                    </div>
-                                    <div class="form-group has-feedback">
-                                        <label for="Price"> Fruit Produced(kg)*</label>
-                                        <input type="text" class="form-control" name="Price" placeholder="">
+                                        <label for="FruitsProduced"> Fruit Produced(kg)*</label>
+                                        <input type="text" class="form-control" name="FruitProduced" placeholder="">
                                         <i class=" form-control-feedback"></i>
                                     </div>
 
                                     <div class="form-group has-feedback">
-                                        <label for="Location">Profit*</label>
-                                        <input type="text" class="form-control" name="Location" placeholder="">
+                                        <label for="Profit">Profit*</label>
+                                        <input type="text" class="form-control" name="Profit" placeholder="">
                                         <i class=" form-control-feedback"></i>
                                     </div>
-                                    
-
-                                    <!--                                    <div class="form-group has-feedback">
-                                                                            <label for="Details">Details</label>
-                                                                            <textarea class="form-control" rows="6" name="Details" placeholder=""></textarea>
-                                                                            <i class="fa fa-pencil form-control-feedback"></i>
-                                                                        </div>-->
+                   
                                     <div class="form-group has-feedback">
-                                        <label for="Experience"> Date*</label>
-                                        <input type="text" class="form-control" name="Experience" placeholder="">
+                                        <label for="Date"> Date*</label>
+                                        <input type="text" class="form-control" name="Date" placeholder="">
                                         <i class=" form-control-feedback"></i>
-                                    </div>
-                                    <div class="form-group has-feedback">
-                                        <label for="name"> Product Image*</label>
-                                        <input type="file" class="form-control" name="file" placeholder="">
-                                        <i class=" form-control-feedback"></i>
-                                    </div>
+                                   
 
-
-                                    <input type="submit" value="Submit" id="submit" class="submit btn btn-default">
+                                    <input type="submit"class="submit btn btn-default">
                                 </form>
 
 

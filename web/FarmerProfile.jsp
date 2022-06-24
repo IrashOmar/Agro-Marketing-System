@@ -43,12 +43,12 @@
                        <ul class="nav navbar-nav">
                                 <li class="active"><a href="FarmerMainPage.html">Home</a></li> 
                                 <!-- <li><a href="about.html">Available</a></li> -->
-                                <li><a href="post.html">Post</a></li>
+                                <li><a href="post2.html">Post</a></li>
                                 <li><a href="ReadingFarmer.jsp">Reading Section</a></li>
                                 <!-- <li><a href="portfolio.html">Categories</a></li> -->
                                 <li><a href="FarmerFeedback.jsp">Feedback</a></li>
-                                <li><a href="OrderList.jsp">Order</a></li>
-                                <li><a href="#">Progress</a></li>
+                                <li><a href="OrderListTest.jsp">Order</a></li>
+                                <li><a href="UpdateTreeProgress.jsp">Progress</a></li>
                                 <li><a href="FarmerProfile.jsp">Profile</a></li>
                             </ul>
                         </div>
@@ -100,7 +100,7 @@
                 Class.forName("com.mysql.jdbc.Driver");
                 conn = DriverManager.getConnection(host, "root", "admin");
                 stat = conn.createStatement();
-                String data = "select * from farmerregistrationtest";
+                String data = "select * from farmerregistrationtest where farId="+session.getAttribute("farId");;
                 res = stat.executeQuery(data);
                 while (res.next()) {
                     //                                String filename = res.getString("filename");

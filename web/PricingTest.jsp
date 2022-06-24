@@ -39,15 +39,16 @@
                             <!-- <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo"/></a> -->
                         </div>
                         <div class="navbar-collapse collapse ">
-                            <ul class="nav navbar-nav">
-                                <li class="active"><a href="index.html">Home</a></li> 
+                          <ul class="nav navbar-nav">
+                                 <li class="active"><a href="index.html">Home</a></li> 
                                 <!-- <li><a href="about.html">Available</a></li> -->
-                                <li><a href="Category2.jsp">Categories</a></li>
-                                <li class="active"><a href="services.html">Reading Section</a></li>
+                                <li><a href="CategoryTest.jsp">Categories</a></li>
+                                <li><a href="ReadingSection.jsp">Reading Section</a></li>
                                 <!-- <li><a href="portfolio.html">Categories</a></li> -->
                                 <li><a href="Feedback.jsp">Feedback</a></li>
-                                <li><a href="Feedback.html">Cart</a></li>
-                                <li><a href="Feedback.html">Profile</a></li>
+                                <li><a href="Trading/ranking.jsp">Trading</a></li>
+                                <li><a href="CartNew.jsp">Cart</a></li>
+                                 <li><a href="BuyerProfile.jsp">Profile</a></li>
 
                             </ul>
                         </div>

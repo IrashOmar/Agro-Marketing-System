@@ -49,16 +49,17 @@
                             </button>
                             <!-- <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo"/></a> -->
                         </div>
+
                         <div class="navbar-collapse collapse ">
                             <ul class="nav navbar-nav">
                                 <li class="active"><a href="FarmerMainPage.html">Home</a></li> 
                                 <!-- <li><a href="about.html">Available</a></li> -->
-                                <li><a href="post.html">Post</a></li>
+                                <li><a href="post2.html">Post</a></li>
                                 <li><a href="ReadingFarmer.jsp">Reading Section</a></li>
                                 <!-- <li><a href="portfolio.html">Categories</a></li> -->
                                 <li><a href="FarmerFeedback.jsp">Feedback</a></li>
-                                <li><a href="OrderList.jsp">Order</a></li>
-                                <li><a href="#">Progress</a></li>
+                                <li><a href="OrderListTest.jsp">Order</a></li>
+                                <li><a href="UpdateTreeProgress.jsp">Progress</a></li>
                                 <li><a href="FarmerProfile.jsp">Profile</a></li>
                             </ul>
                         </div>
@@ -84,7 +85,7 @@
                             <thead class="table-dark">
 
                                 <tr>
-
+                                    <th>Tree Id</th>
                                     <th>Product Name</th>
                                     <!--                                        <th>Supplier</th>-->
                                     <th>Price Per Unit</th>
@@ -121,7 +122,11 @@
                                     try {
                                         connection = DriverManager.getConnection(connectionUrl + dbName, userId, password);
                                         statement = connection.createStatement();
-                                        String sql = "SELECT carttest2.TotalPrice, carttest2.cart_id, carttest2.quantity, tree.ProductName,trybackend2.Price FROM carttest2 JOIN trybackend2 ON carttest2.id = trybackend2.id JOIN tree ON trybackend2.tree_id = tree.tree_id";
+                                        int farId = 0;
+//                                        int farId=(int)request.getSession().getAttribute("farId");
+//                                        session.getAttribute("farId");
+//                                         String farId = resultSet.getString("farId");
+                                        String sql = "SELECT carttest2.cart_id2, carttest2.TotalPrice, carttest2.farId, carttest2.cart_id, carttest2.quantity, tree.ProductName,trybackend2.Price FROM carttest2 JOIN trybackend2 ON carttest2.id = trybackend2.id JOIN tree ON trybackend2.tree_id = tree.tree_id WHERE carttest2.farId=" + session.getAttribute("farId");
 
                                         resultSet = statement.executeQuery(sql);
                                         while (resultSet.next()) {
@@ -129,7 +134,7 @@
 
                                 %>
                                 <tr class="table">
-
+                                    <td>T0<%=resultSet.getString("cart_id2")%></td>
                                     <td><%=resultSet.getString("ProductName")%></td>
                                     <td><%=resultSet.getString("Price")%></td>
                                     <td><%=resultSet.getString("quantity")%></td>

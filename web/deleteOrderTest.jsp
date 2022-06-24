@@ -32,7 +32,7 @@
 //              ResultSet resultSet5 = null;
 
             stat = conn.createStatement();
-            String sql1 = "SELECT carttest2.TotalPrice,carttest2.cart_id,carttest2.quantity,trybackend2.id,trybackend2.Avail_quantity FROM carttest2 JOIN trybackend2 ON carttest2.id = trybackend2.id";
+            String sql1 = "SELECT carttest2.farId, carttest2.TotalPrice,carttest2.cart_id,carttest2.quantity,trybackend2.id,trybackend2.Avail_quantity FROM carttest2 JOIN trybackend2 ON carttest2.id = trybackend2.id";
             resultSet = stat.executeQuery(sql1);
             
             resultSet.next();
@@ -48,7 +48,7 @@
             out.println("<script>console.log('mak')</script>");
             int a = stat.executeUpdate(sql2);
 //             stat1.execute("insert into stock(product_id,quantity)values('"+product_id+"','"+q+"')";  
-            stat.executeUpdate("delete from carttest2 where cart_id='" + id + "'");
+           // stat.executeUpdate("delete from carttest2 where cart_id='" + id + "'");
 
             response.sendRedirect("OrderListTest.jsp");
         %>

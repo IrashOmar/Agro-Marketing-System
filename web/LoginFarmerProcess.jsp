@@ -31,6 +31,7 @@ String sql = "select * from farmerregistrationtest where email=? and password=?"
 
 String email = request.getParameter("email");
 String password = request.getParameter("password");
+String farId = request.getParameter("farId");
 
 if((!(email.equals(null) || email.equals("")) && !(password.equals(null) || password.equals(""))))
 {
@@ -46,12 +47,15 @@ if(rs.next())
     
 userdbName = rs.getString("email");
 userdbPsw = rs.getString("password");
+farId= rs.getString("farId");
 
 if(email.equals(userdbName) && password.equals(userdbPsw))
 {
 session.setAttribute("email",userdbName);
+session.setAttribute("farId",farId);
 //session.setAttribute("usertype", dbUsertype); 
-response.sendRedirect("FarmerMainPage.html"); 
+response.sendRedirect("FarmerMainPage.html?farId="+rs.getString("farId"));
+//response.sendRedirect("OrderListTest.jsp?farId="+rs.getString("farId"));
 } 
 }
 else

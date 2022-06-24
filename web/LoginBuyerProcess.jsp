@@ -31,6 +31,7 @@ String sql = "select * from buyerregistration where email=? and password=?";
 
 String email = request.getParameter("email");
 String password = request.getParameter("password");
+String buyId = request.getParameter("buyId");
 
 if((!(email.equals(null) || email.equals("")) && !(password.equals(null) || password.equals(""))))
 {
@@ -46,12 +47,15 @@ if(rs.next())
     
 userdbName = rs.getString("email");
 userdbPsw = rs.getString("password");
-
+buyId= rs.getString("buyId");
 if(email.equals(userdbName) && password.equals(userdbPsw))
 {
 session.setAttribute("email",userdbName);
 //session.setAttribute("usertype", dbUsertype); 
-response.sendRedirect("index.html"); 
+session.setAttribute("buyId",buyId);
+//session.setAttribute("usertype", dbUsertype); 
+response.sendRedirect("index.html?buyId="+rs.getString("buyId"));
+
 } 
 }
 else
