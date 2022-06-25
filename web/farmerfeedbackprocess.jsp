@@ -38,6 +38,6 @@ catch(Exception e)
 System.out.print(e);
 e.printStackTrace();
 }
-response.sendRedirect("Feedback.jsp");
+response.sendRedirect("FarmerFeedback.jsp");
 %>
 </html>

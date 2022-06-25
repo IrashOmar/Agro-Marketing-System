@@ -81,6 +81,10 @@
                     <a href="editReadingSection.jsp" class="text">
                         <i class="fas fa-edit"></i>&nbsp&nbsp Manage Reading</a>
                 </li>
+                   <li>
+                        <a href="FeedbackNewDesign.jsp" class="text">
+                            <i class="fas fa-edit"></i>&nbsp&nbsp View Feedback</a>
+                    </li>
 
             </ul>
 
@@ -134,7 +138,7 @@
 
                             <button type ="submit" class="btn btn-warning">Update</button>
 
-                            <a href="editReadingSection.jsp" class="btn btn-default">Back</a>
+                            <a href="editCategory.jsp" class="btn btn-default">Back</a>
 
                         </form>
                     </div>

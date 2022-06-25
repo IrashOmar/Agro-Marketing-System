@@ -117,8 +117,7 @@
                                    <ul>
                                         Available Quantity:<li><i class="icon-ok"></i><%=res.getString("Avail_quantity")%></li>
                                         Price/Tree:<li><i class="icon-ok"></i><%=res.getString("Price")%></li>
-                                        
-                                       
+                                        Location:<li><i class="icon-ok"></i><%=res.getString("Location")%></li>
                                         Farming Experience  :<li><i class="icon-ok"></i> <%=res.getString("Experience")%></li>
                                         <!-- <li><i class="icon-ok"></i> HTML5 CSS3 jQuery</li> -->
                                     </ul>

@@ -101,11 +101,11 @@
                             <div class="contact-form">
 
                                 <form method="post" action="" >
-                                    <%  
+                                <%  
                                         stat = conn.createStatement();
                                         String u = request.getParameter("u");
 //                        int num = Integer.parseInt(u);
-                                        String data = "select * from farmerregistrationtest where farId='" + u + "'";
+                                        String data = "select * from treeprogress where progress_id='" + u + "'";
                                         res = stat.executeQuery(data);
                                         while (res.next()) {
 
@@ -138,24 +138,24 @@
                                                                             <i class=" form-control-feedback"></i>
                                                                         </div>-->
                                     <div class="form-group has-feedback">
-                                        <label for="Email"> Email*</label>
-                                        <input type="text" class="form-control" name="email" placeholder="" value="<%=res.getString("email")%>">
+                                        <label for="progress_id"> Progress Id*</label>
+                                        <input type="text" class="form-control" name="progress_id" placeholder="" value="<%=res.getString("progress_id")%>">
                                         <i class=" form-control-feedback"></i>
                                     </div>
                                     <div class="form-group has-feedback">
-                                        <label for="Ic"> Name*</label>
-                                        <input type="text" class="form-control" name="Name" placeholder="" value="<%=res.getString("Name")%>">
+                                        <label for="FruitTree"> Fruit Tree*</label>
+                                        <input type="text" class="form-control" name="FruitTree" placeholder="" value="<%=res.getString("FruitTree")%>">
                                         <i class=" form-control-feedback"></i>
                                     </div>
                                     <div class="form-group has-feedback">
-                                        <label for="Price"> Password*</label>
-                                        <input type="password" class="form-control" name="password" placeholder="" value="<%=res.getString("password")%>">
+                                        <label for="Quantity"> Quantity*</label>
+                                        <input type="text" class="form-control" name="Quantity" placeholder="" value="<%=res.getString("Quantity")%>">
                                         <i class=" form-control-feedback"></i>
                                     </div>
 
                                     <div class="form-group has-feedback">
-                                        <label for="address"> Address*</label>
-                                        <input type="text" class="form-control" name="address" placeholder="" value="<%=res.getString("address")%>">
+                                        <label for="Status"> Status*</label>
+                                        <input type="text" class="form-control" name="Status" placeholder="" value="<%=res.getString("Status")%>">
                                         <i class=" form-control-feedback"></i>
                                     </div>
 
@@ -165,36 +165,36 @@
                                                                             <i class="fa fa-pencil form-control-feedback"></i>
                                                                         </div>-->
                                     <div class="form-group has-feedback">
-                                        <label for="phone">Phone Number*</label>
-                                        <input type="text" class="form-control" name="phone" value="<%=res.getString("phone")%>">
+                                        <label for="FruitProduced">Fruit Produced(kg)*</label>
+                                        <input type="text" class="form-control" name="FruitProduced" value="<%=res.getString("FruitProduced")%>">
                                         <i class=" form-control-feedback"></i>
                                     </div>
                                     <div class="form-group has-feedback">
-                                        <label for="filename"> Farm Certificate*</label>
-                                        <input type="text" class="form-control" name="filename" value="<%=res.getString("filename")%>">
+                                        <label for="Profit">Profit </label>
+                                        <input type="text" class="form-control" name="Profit" value="<%=res.getString("Profit")%>">
                                         <i class=" form-control-feedback"></i>
                                     </div>
 
 
                                     <input type="submit" value="Submit" id="submit" class="submit btn btn-default">
-                                     <a href='deleteFarmer.jsp?d=<%=res.getString("farId")%>' class="btn btn-danger">Delete</a><!-- comment -->
-                                </form>
-                                        <%
+<!--                                     <a href='deleteFarmer.jsp?d= class="btn btn-danger">Delete</a> comment 
+-->                                </form>
+                                    <%
         String a = request.getParameter("u");
-        String b = request.getParameter("email");
-        String c = request.getParameter("Name");
-        String d = request.getParameter("password");
-        String e = request.getParameter("address");
-        String f = request.getParameter("phone");
-        String g = request.getParameter("filename");
+        String b = request.getParameter("FruitTree");
+        String c = request.getParameter("Quantity");
+        String d = request.getParameter("Status");
+        String e = request.getParameter("FruitProduced");
+        String f = request.getParameter("Profit");
+//        String g = request.getParameter("filename");
 
 
-        if (a != null && b != null && c != null && d != null  && e != null && f != null && g != null){
-             String query = "update farmerregistrationtest set email='" + b + "',Name='" + c + "',password='" + d + "',address='" + e + "',phone='" + f + "',filename='" + g + "' where farId='" + a + "'";
+        if (a != null && b != null && c != null && d != null  && e != null && f != null){
+             String query = "update treeprogress set FruitTree='" + b + "',Quantity='" + c + "',Status='" + d + "',FruitProduced='" + e + "',Profit='" + f + "' where progress_id='" + a + "'";
             stmt = conn.prepareStatement(query);
 
             stmt.executeUpdate();
-            response.sendRedirect("FarmerProfile.jsp");
+            response.sendRedirect("ViewProgress.jsp");
         } else {
 
         }

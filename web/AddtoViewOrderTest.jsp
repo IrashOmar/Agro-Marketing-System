@@ -1,9 +1,3 @@
-<%-- 
-    Document   : addToViewOrder
-    Created on : Jul 9, 2021, 8:54:39 PM
-    Author     : User
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@page import="java.sql.DriverManager"%>
@@ -20,7 +14,6 @@
                     String dbName = "test";
                     String userId = "root";
                     String password = "admin";
-
                     try {
                     Class.forName(driverName);
                     } catch (ClassNotFoundException e) {
@@ -43,7 +36,6 @@
                     connection = DriverManager.getConnection(connectionUrl+dbName, userId, password);
                     statement=connection.createStatement();
                     String sql ="SELECT * FROM carttest ";
-
                     resultSet = statement.executeQuery(sql);
                     while(resultSet.next()){
                     String q = resultSet.getString("quantity");
@@ -53,7 +45,7 @@
                      String id3=resultSet.getString("farId");
                       String id4=resultSet.getString("TotalPrice");
                     statement1=connection.createStatement();  
-                    String sql1 ="insert into carttest2(cart_id,id,farId,buyId,quantity,TotalPrice)values('"+cart_id+"','"+id2+"','"+id3+"','"+session.getAttribute("buyId")+"','"+q+"','"+id4+"')";  
+                    String sql1 ="insert into carttest2(cart_id,id,farId,quantity,TotalPrice,buyId)values('"+cart_id+"','"+id2+"','"+id3+"','"+q+"','"+id4+"','"+session.getAttribute("buyId")+"')";  
                     out.println("<script>console.log('mak')</script>");
                     int a = statement1.executeUpdate(sql1);
                      String id=resultSet.getString("id");

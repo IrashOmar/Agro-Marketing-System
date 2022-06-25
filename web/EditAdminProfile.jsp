@@ -45,43 +45,50 @@
             </div>
 
             <ul class="list-unstyled components">
-                <li>
-                    <a href="AdminProfileCard/dist/AdminProfileCard.jsp" class="text">
-                        <i class=""></i>&nbsp&nbsp Profile</a>
-                </li>
+                       <li  class="active">
+                        <a href="AdminProfile.jsp" class="text">
+                            <i class=""></i>&nbsp&nbsp Profile</a>
+                    </li>
 
-                <li>
-                    <a href="#" class="text">
-                        <i class="fas fa-edit"></i>&nbsp&nbsp Manage Profile</a>
-                </li>
-                <li>
-                    <a href="admin.jsp" class="text">
-                        <i class=""></i>&nbsp&nbsp Terms</a>
-                </li>
+<!--                    <li>
+                        <a href="EditAdminProfile.jsp" class="text">
+                            <i class="fas fa-edit"></i>&nbsp&nbsp Manage Profile</a>
+                    </li>-->
+                       <li>
+                        <a href="ViewCert.jsp" class="text">
+                            <i class="fas fa-edit"></i>&nbsp&nbsp View Farm Certification</a>
+                    </li>
+                    <li>
+                        <a href="adminTest.jsp" class="text">
+                            <i class=""></i>&nbsp&nbsp Terms</a>
+                    </li>
 
-                <li>
-                    <a href="edit.jsp" class="text">
-                        <i class="fas fa-edit"></i>&nbsp&nbsp Manage Terms</a>
-                </li>
-                <li>
-                    <a href="ManageCategory.jsp" class="text">
-                        <i class=""></i>&nbsp&nbsp Category</a>
-                </li>
+                    <li>
+                        <a href="EditTerms.jsp" class="text">
+                            <i class="fas fa-edit"></i>&nbsp&nbsp Manage Terms</a>
+                    </li>
+                    <li>
+                        <a href="ManageCategoryTest.jsp" class="text">
+                            <i class=""></i>&nbsp&nbsp Category</a>
+                    </li>
 
-                <li>
-                    <a href="#" class="text">
-                        <i class="fas fa-edit"></i>&nbsp&nbsp Manage Category</a>
-                </li>
-                <li>
-                    <a href="ManageReadingSection.jsp" class="text">
-                        <i class=""></i>&nbsp&nbsp Reading</a>
-                </li>
+                    <li>
+                        <a href="editCategory.jsp" class="text">
+                            <i class="fas fa-edit"></i>&nbsp&nbsp Manage Category</a>
+                    </li>
+                    <li>
+                        <a href="ManageReadingSection.jsp" class="text">
+                            <i class=""></i>&nbsp&nbsp Reading</a>
+                    </li>
 
-                <li class="active">
-                    <a href="editReadingSection.jsp" class="text">
-                        <i class="fas fa-edit"></i>&nbsp&nbsp Manage Reading</a>
-                </li>
-
+                    <li>
+                        <a href="editReadingSection.jsp" class="text">
+                            <i class="fas fa-edit"></i>&nbsp&nbsp Manage Reading</a>
+                    </li>
+                       <li>
+                        <a href="FeedbackNewDesign.jsp" class="text">
+                            <i class="fas fa-edit"></i>&nbsp&nbsp View Feedback</a>
+                    </li>
             </ul>
 
         </nav>

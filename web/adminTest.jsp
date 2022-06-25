@@ -40,14 +40,14 @@
                 <ul class="list-unstyled components">
 
                     <li>
-                        <a href="AdminProfileCard/dist/AdminProfileCard.jsp" class="text">
+                        <a href="AdminProfile.jsp" class="text">
                             <i class=""></i>&nbsp&nbsp Profile</a>
                     </li>
 
-                    <li>
-                        <a href="#" class="text">
+<!--                    <li>
+                        <a href="EditAdminProfile.jsp" class="text">
                             <i class="fas fa-edit"></i>&nbsp&nbsp Manage Profile</a>
-                    </li>
+                    </li>-->
                        <li>
                         <a href="ViewCert.jsp" class="text">
                             <i class="fas fa-edit"></i>&nbsp&nbsp View Farm Certification</a>
@@ -76,8 +76,12 @@
                     </li>
 
                     <li>
-                        <a href="#" class="text">
+                        <a href="editReadingSection.jsp" class="text">
                             <i class="fas fa-edit"></i>&nbsp&nbsp Manage Reading</a>
+                    </li>
+                       <li>
+                        <a href="FeedbackNewDesign.jsp" class="text">
+                            <i class="fas fa-edit"></i>&nbsp&nbsp View Feedback</a>
                     </li>
 
 

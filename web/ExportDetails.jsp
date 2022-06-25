@@ -5,8 +5,6 @@
 <%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1"%>
-
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -17,8 +15,7 @@
         <meta name="author" content="http://webthemez.com" />
         <!-- css -->
         <link href="css/bootstrap.min.css" rel="stylesheet" />
-        <link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
-        <link href="css/jcarousel.css" rel="stylesheet" />
+        
         <link href="css/flexslider.css" rel="stylesheet" />
         <link href="css/style.css" rel="stylesheet" />
 
@@ -43,15 +40,15 @@
                             <!-- <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo"/></a> -->
                         </div>
                         <div class="navbar-collapse collapse ">
-                            <ul class="nav navbar-nav">
+                             <ul class="nav navbar-nav">
                                 <li class="active"><a href="FarmerMainPage.html">Home</a></li> 
                                 <!-- <li><a href="about.html">Available</a></li> -->
-                                <li><a href="post.html">Post</a></li>
+                                <li><a href="post2.html">Post</a></li>
                                 <li><a href="ReadingFarmer.jsp">Reading Section</a></li>
                                 <!-- <li><a href="portfolio.html">Categories</a></li> -->
                                 <li><a href="FarmerFeedback.jsp">Feedback</a></li>
-                                <li><a href="OrderList.jsp">Order</a></li>
-                                <li><a href="#">Progress</a></li>
+                                <li><a href="OrderListTest.jsp">Order</a></li>
+                                <li><a href="UpdateTreeProgress.jsp">Progress</a></li>
                                 <li><a href="FarmerProfile.jsp">Profile</a></li>
                             </ul>
                         </div>
@@ -62,7 +59,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h2 class="pageTitle">Post Your Advertisement</h2>
+                            <h2 class="pageTitle">Update Tree Progress</h2>
                         </div>
                     </div>
                 </div>
@@ -88,118 +85,51 @@
                                     Your message has been sent. Thank you!
                                 </div>
                             </div>
-                            <%
-                                String host = "jdbc:mysql://localhost:3306/test";
-                                Connection conn = null;
-                                Statement stat = null;
-                                ResultSet res = null;
-                                PreparedStatement stmt = null;
-                                Class.forName("com.mysql.jdbc.Driver").newInstance();
-                                conn = DriverManager.getConnection(host, "root", "admin");
-
-                            %>
+                            
                             <div class="contact-form">
+     
+                                <form action="UpdateTreeProgressProcess.jsp" method="post">
 
-                                <form method="post" action="" >
-                                    <%  
-                                        stat = conn.createStatement();
-                                        String u = request.getParameter("u");
-//                        int num = Integer.parseInt(u);
-                                        String data = "select * from farmerregistrationtest where farId='" + u + "'";
-                                        res = stat.executeQuery(data);
-                                        while (res.next()) {
-
-
-                                    %>
-
-                                    <!--                                    <div class="form-group has-feedback">
-                                                                            <label for="ProductName">Choose Your Tree*</label>
-                                                                            <select id="cars" name="ProductName" class="form-control">
-                                                                                <option value="1">Apple</option>
-                                                                                <option value="2">Banana</option>
-                                                                                <option value="3">Broccoli</option>
-                                                                                <option value="4">Cucumber</option>
-                                                                                <option value="5">Durian</option> comment 
-                                                                                <option value="6">Grape</option> comment 
-                                                                                <option value="7">Kiwi</option> comment 
-                                                                                <option value="8">Strawberry</option>
-                                                                            </select>-->
-                                    <!-- <input type="email" class="form-control" name="email" placeholder=""> -->
-                                    <!--                                        <i class=" form-control-feedback"></i>
-                                                                        </div>-->
-                                    <!--                                    <div class="form-group has-feedback">
-                                                                            <label for="Category">Category*</label>
-                                                                            <select id="cars" name="Category" class="form-control">
-                                                                                <option value="1">Locals</option>
-                                                                                <option value="2">Imports</option>
-                                                                                <option value="3">Vegetables</option>
-                                                                            </select>
-                                                                             <input type="email" class="form-control" name="email" placeholder=""> 
-                                                                            <i class=" form-control-feedback"></i>
-                                                                        </div>-->
-                                    <div class="form-group has-feedback">
-                                        <label for="Email"> Email*</label>
-                                        <input type="text" class="form-control" name="email" placeholder="" value="<%=res.getString("email")%>">
+<!--                                      <div class="form-group has-feedback">
+                                        <label for="Purchasement_Id">Purchasement Id*</label>
+                                        <input type="text" class="form-control" name="Purchasement_Id" placeholder="">
+                                        <i class=" form-control-feedback"></i>
+                                    </div>-->
+                                      <div class="form-group has-feedback">
+                                        <label for="FruitTree"> Address*</label>
+                                        <input type="text" class="form-control" name="FruitTree" placeholder="">
                                         <i class=" form-control-feedback"></i>
                                     </div>
                                     <div class="form-group has-feedback">
-                                        <label for="Ic"> Name*</label>
-                                        <input type="text" class="form-control" name="Name" placeholder="" value="<%=res.getString("Name")%>">
+                                        <label for="Quantity"> Postcode*</label>
+                                        <input type="text" class="form-control" name="Quantity" placeholder="">
                                         <i class=" form-control-feedback"></i>
                                     </div>
                                     <div class="form-group has-feedback">
-                                        <label for="Price"> Password*</label>
-                                        <input type="password" class="form-control" name="password" placeholder="" value="<%=res.getString("password")%>">
-                                        <i class=" form-control-feedback"></i>
-                                    </div>
-
-                                    <div class="form-group has-feedback">
-                                        <label for="address"> Address*</label>
-                                        <input type="text" class="form-control" name="address" placeholder="" value="<%=res.getString("address")%>">
-                                        <i class=" form-control-feedback"></i>
-                                    </div>
-
-                                    <!--                                    <div class="form-group has-feedback">
-                                                                            <label for="Details">Details</label>
-                                                                            <textarea class="form-control" rows="6" name="Details" placeholder=""></textarea>
-                                                                            <i class="fa fa-pencil form-control-feedback"></i>
-                                                                        </div>-->
-                                    <div class="form-group has-feedback">
-                                        <label for="phone">Phone Number*</label>
-                                        <input type="text" class="form-control" name="phone" value="<%=res.getString("phone")%>">
+                                        <label for="Status"> State*</label>
+                                        <input type="text" class="form-control" name="Status" placeholder="">
                                         <i class=" form-control-feedback"></i>
                                     </div>
                                     <div class="form-group has-feedback">
-                                        <label for="filename"> Farm Certificate*</label>
-                                        <input type="text" class="form-control" name="filename" value="<%=res.getString("filename")%>">
+                                        <label for="FruitsProduced"> Fruit export quantity(kg)*</label>
+                                        <input type="text" class="form-control" name="FruitProduced" placeholder="">
                                         <i class=" form-control-feedback"></i>
                                     </div>
 
+<!--                                    <div class="form-group has-feedback">
+                                        <label for="Profit">Profit*</label>
+                                        <input type="text" class="form-control" name="Profit" placeholder="">
+                                        <i class=" form-control-feedback"></i>
+                                    </div>-->
+                   
+                                    <div class="form-group has-feedback">
+                                        <label for="Date"> Date*</label>
+                                        <input type="text" class="form-control" name="Date" placeholder="">
+                                        <i class=" form-control-feedback"></i>
+                                   
 
-                                    <input type="submit" value="Submit" id="submit" class="submit btn btn-default">
-                                     <a href='deleteFarmer.jsp?d=<%=res.getString("farId")%>' class="btn btn-danger">Delete</a><!-- comment -->
+                                    <input type="submit"class="submit btn btn-default">
                                 </form>
-                                        <%
-        String a = request.getParameter("u");
-        String b = request.getParameter("email");
-        String c = request.getParameter("Name");
-        String d = request.getParameter("password");
-        String e = request.getParameter("address");
-        String f = request.getParameter("phone");
-        String g = request.getParameter("filename");
-
-
-        if (a != null && b != null && c != null && d != null  && e != null && f != null && g != null){
-             String query = "update farmerregistrationtest set email='" + b + "',Name='" + c + "',password='" + d + "',address='" + e + "',phone='" + f + "',filename='" + g + "' where farId='" + a + "'";
-            stmt = conn.prepareStatement(query);
-
-            stmt.executeUpdate();
-            response.sendRedirect("FarmerProfile.jsp");
-        } else {
-
-        }
-    }
-%>
 
 
                             </div>
@@ -313,4 +243,3 @@
         <script src="js/validate.js"></script>
     </body>
 </html>
-

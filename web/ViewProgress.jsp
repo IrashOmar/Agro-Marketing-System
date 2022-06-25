@@ -84,13 +84,14 @@
                         <table class="table table-striped table-hover table-bordered ">
                             <thead class="table-dark">
 
-                                <tr>
-                                    <th>Tree Id</th>
-                                    <th>Product Name</th>
+                                <tr> <th>Tree Id</th>
+                                    <th>Fruit Tree</th>
+                                    <th>Quantity</th>
                                     <!--                                        <th>Supplier</th>-->
-                                    <th>Price Per Unit</th>
-                                    <th> Quantity</th>
-                                    <th>Total Price</th>
+                                    <th>Status</th>
+                                    <th>Fruit Produced(kg)</th>
+                                    <th>Profit</th>
+                                     <th>Date</th>
                                     <!--                                        <th> Description</th>-->
 
                                     <th>Action</th>
@@ -122,29 +123,35 @@
                                     try {
                                         connection = DriverManager.getConnection(connectionUrl + dbName, userId, password);
                                         statement = connection.createStatement();
-                                        int farId = 0;
+                                      //  int farId = 0;
 //                                        int farId=(int)request.getSession().getAttribute("farId");
 //                                        session.getAttribute("farId");
 //                                         String farId = resultSet.getString("farId");
-                                        String sql = "SELECT carttest2.cart_id2, carttest2.TotalPrice, carttest2.farId, carttest2.cart_id, carttest2.quantity, tree.ProductName,trybackend2.Price FROM carttest2 JOIN trybackend2 ON carttest2.id = trybackend2.id JOIN tree ON trybackend2.tree_id = tree.tree_id WHERE carttest2.farId=" + session.getAttribute("farId");
+                                        String sql = "SELECT * FROM treeprogress";
 
                                         resultSet = statement.executeQuery(sql);
                                         while (resultSet.next()) {
-                                            String cart_id = resultSet.getString("cart_id");
+                                           int farId = resultSet.getInt("farId");
+                                            int cart_id2 = resultSet.getInt("cart_id2");
+                                             int buyId = resultSet.getInt("buyId");
+                                              int TotalPrice = resultSet.getInt("TotalPrice");
+                                           
 
                                 %>
                                 <tr class="table">
-                                    <td>T0<%=resultSet.getString("cart_id2")%></td>
-                                    <td><%=resultSet.getString("ProductName")%></td>
-                                    <td><%=resultSet.getString("Price")%></td>
-                                    <td><%=resultSet.getString("quantity")%></td>
-                                    <td><%=resultSet.getString("TotalPrice")%></td>
+                                    <td>T0<%=resultSet.getString("progress_id")%></td>
+                                    <td><%=resultSet.getString("FruitTree")%></td>
+                                    <td><%=resultSet.getString("Quantity")%></td>
+                                    <td><%=resultSet.getString("Status")%></td>
+                                    <td><%=resultSet.getString("FruitProduced")%></td>
+                                    <td><%=resultSet.getString("Profit")%></td>
+                                     <td><%=resultSet.getString("Date")%></td>
                                     <!--                                       <td></td>-->
 
 
 
                                     <td>
-                                        <a href='deleteOrderTest.jsp?d=<%=resultSet.getString("cart_id")%>'class="btn btn-warning">Accept</a><!-- comment -->
+                                       <a href='editProgress.jsp?u=<%=resultSet.getString("progress_id")%>'class="btn btn-warning">Edit</a><!-- comment -->
 
                                     </td>
                                 </tr>

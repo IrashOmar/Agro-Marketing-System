@@ -301,8 +301,9 @@
                                     <td><%=res.getString("FruitProduced")%></td><!-- comment -->
                                     <td><%=res.getString("Profit")%></td>
                                     <td><%=res.getString("Date")%></td>
-                                    <td><a href ="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Export</a><!-- comment -->
-                                        <a href="">&nbsp;&nbsp;&nbsp;Sell</a><!-- comment --></td>
+                                    <td><a href ='../ExportDetails.jsp?progress_id=<%=res.getString("progress_id")%>'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Export</a><!-- comment -->
+                                        <a href='../deleteProgress.jsp?d=<%=res.getString("progress_id")%>'>Delete</a><!-- comment -->
+                                    
 
 
                                 </tr>

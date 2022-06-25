@@ -77,8 +77,9 @@
                         <div class="col-md-12">
                             <div>
                                 <h3>What we do?</h3>
-                                <p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas</p>
-                                <p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas</p>
+                                <p>We provide various categories of farming ranging from fruits to vegetables</p>
+                                <p>So what are you waiting for?? Choose your favourite tree and see which farm is available to provide the farming service.</p>
+<!--                          <p></p>-->
                             </div> 
                         </div>
                     </div> 

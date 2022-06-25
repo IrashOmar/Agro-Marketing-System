@@ -51,7 +51,7 @@ if(email.equals(userdbName) && password.equals(userdbPsw))
 {
 session.setAttribute("Aemail",userdbName);
 //session.setAttribute("usertype", dbUsertype); 
-response.sendRedirect("admin.jsp"); 
+response.sendRedirect("adminTest.jsp"); 
 } 
 }
 else

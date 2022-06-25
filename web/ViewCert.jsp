@@ -54,16 +54,16 @@
                 </div>
 
                 <ul class="list-unstyled components">
-                    <li>
-                        <a href="AdminProfileCard/dist/AdminProfileCard.jsp" class="text">
+                          <li>
+                        <a href="AdminProfile.jsp" class="text">
                             <i class=""></i>&nbsp&nbsp Profile</a>
                     </li>
 
-                    <li>
-                        <a href="#" class="text">
+<!--                    <li>
+                        <a href="EditAdminProfile.jsp" class="text">
                             <i class="fas fa-edit"></i>&nbsp&nbsp Manage Profile</a>
-                    </li>
-                    <li class="active">
+                    </li>-->
+                       <li  class="active">
                         <a href="ViewCert.jsp" class="text">
                             <i class="fas fa-edit"></i>&nbsp&nbsp View Farm Certification</a>
                     </li>
@@ -77,11 +77,11 @@
                             <i class="fas fa-edit"></i>&nbsp&nbsp Manage Terms</a>
                     </li>
                     <li>
-                        <a href="ManageCategory.jsp" class="text">
+                        <a href="ManageCategoryTest.jsp" class="text">
                             <i class=""></i>&nbsp&nbsp Category</a>
                     </li>
 
-                    <li >
+                    <li>
                         <a href="editCategory.jsp" class="text">
                             <i class="fas fa-edit"></i>&nbsp&nbsp Manage Category</a>
                     </li>
@@ -94,6 +94,11 @@
                         <a href="editReadingSection.jsp" class="text">
                             <i class="fas fa-edit"></i>&nbsp&nbsp Manage Reading</a>
                     </li>
+                       <li>
+                        <a href="FeedbackNewDesign.jsp" class="text">
+                            <i class="fas fa-edit"></i>&nbsp&nbsp View Feedback</a>
+                    </li>
+
                       
 
 

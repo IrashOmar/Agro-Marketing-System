@@ -35,15 +35,16 @@
                         </div>
                         <div class="navbar-collapse collapse ">
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="FarmerMainPage.html">Home</a></li> 
+                               <li class="active"><a href="index.html">Home</a></li> 
                                 <!-- <li><a href="about.html">Available</a></li> -->
-                                <li><a href="post2.html">Post</a></li>
-                                <li><a href="ReadingFarmer.jsp">Reading Section</a></li>
+                                <li><a href="CategoryTest.jsp">Categories</a></li>
+                                <li><a href="ReadingSection.jsp">Reading Section</a></li>
                                 <!-- <li><a href="portfolio.html">Categories</a></li> -->
-                                <li><a href="FarmerFeedback.jsp">Feedback</a></li>
-                                <li><a href="OrderListTest.jsp">Order</a></li>
-                                <li><a href="UpdateTreeProgress.jsp">Progress</a></li>
-                                <li><a href="FarmerProfile.jsp">Profile</a></li>
+                                <li><a href="Feedback.jsp">Feedback</a></li>
+                                <li><a href="Trading/ranking.jsp">Trading</a></li>
+                                 <li><a href="CartTest.jsp">Cart</a></li>
+                                 <li><a href="BuyerProfile.jsp">Profile</a></li>
+
                             </ul>
                         </div>
                     </div>
@@ -58,6 +59,7 @@
                     </div>
                 </div>
             </section>
+            
             <section id="content">
 
                 <div class="container">
@@ -83,17 +85,17 @@
                             <div class="contact-form">
                                 
 
-                                <form method="post" action="feedbackProcess.jsp" id="contactform" class="contact">
+                                <form method="post" action="farmerfeedbackprocess.jsp" id="contactform" class="contact">
 <!--                                    <div class="form-group has-feedback">
                                         <label for="name">Name*</label>
                                         <input type="text" class="form-control" name="name" placeholder="">
                                         <i class="fa fa-user form-control-feedback"></i>
-                                    </div>-->
-<!--                                    <div class="form-group has-feedback">
-                                        <label for="email">Email*</label>
-                                        <input type="email" class="form-control" name="email" placeholder="">
-                                        <i class="fa fa-envelope form-control-feedback"></i>
-                                    </div>-->
+-->                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <label for="Date">Date*</label>
+                                        <input type="date" class="form-control" name="Date" placeholder="">
+                                        <i class="fa fa-date form-control-feedback"></i>
+                                    </div>
 <br><br>
                                     <div class="form-group has-feedback">
                                         <label for="feedback">Your Feedback*</label>
@@ -105,6 +107,8 @@
 
 
                             </div>
+                            
+                           
                         </div>
 <!--                        <div class="col-md-6">
                             <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script><div style="overflow:hidden;height:500px;width:600px;"><div id="gmap_canvas" style="height:500px;width:600px;"></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style><a class="google-map-code" href="http://www.trivoo.net" id="get-map-data">trivoo</a></div><script type="text/javascript"> function init_map() {
@@ -123,6 +127,7 @@
                 </div>
 
             </section>
+             
             <footer>
                 <div class="container">
                     <div class="row">

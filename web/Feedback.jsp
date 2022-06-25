@@ -59,6 +59,7 @@
                     </div>
                 </div>
             </section>
+            
             <section id="content">
 
                 <div class="container">
@@ -89,12 +90,12 @@
                                         <label for="name">Name*</label>
                                         <input type="text" class="form-control" name="name" placeholder="">
                                         <i class="fa fa-user form-control-feedback"></i>
-                                    </div>-->
-<!--                                    <div class="form-group has-feedback">
-                                        <label for="email">Email*</label>
-                                        <input type="email" class="form-control" name="email" placeholder="">
-                                        <i class="fa fa-envelope form-control-feedback"></i>
-                                    </div>-->
+-->                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <label for="Date">Date*</label>
+                                        <input type="date" class="form-control" name="Date" placeholder="">
+                                        <i class="fa fa-date form-control-feedback"></i>
+                                    </div>
 <br><br>
                                     <div class="form-group has-feedback">
                                         <label for="feedback">Your Feedback*</label>
@@ -106,6 +107,8 @@
 
 
                             </div>
+                            
+                           
                         </div>
 <!--                        <div class="col-md-6">
                             <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script><div style="overflow:hidden;height:500px;width:600px;"><div id="gmap_canvas" style="height:500px;width:600px;"></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style><a class="google-map-code" href="http://www.trivoo.net" id="get-map-data">trivoo</a></div><script type="text/javascript"> function init_map() {
@@ -124,6 +127,7 @@
                 </div>
 
             </section>
+             
             <footer>
                 <div class="container">
                     <div class="row">
