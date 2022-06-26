@@ -63,13 +63,13 @@
                                 <ion-icon class="checkmark fill" name="checkmark-circle"></ion-icon>
                             </button>
 
-                            <button class="method">
+<!--                            <button class="method">
                                 <ion-icon name="logo-paypal"></ion-icon>
 
                                 <span>PayPal</span>
 
                                 <ion-icon class="checkmark" name="checkmark-circle-outline"></ion-icon>
-                            </button>
+                            </button>-->
 
                         </div>
 

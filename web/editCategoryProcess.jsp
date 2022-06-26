@@ -117,12 +117,12 @@
 
                             %>
                             <div class=" mb-3">
-                                <label class="col-auto"> Topic</label>
+                                <label class="col-auto"> Category</label>
                                 <input name="category" value='<%=res.getString("category")%>' type="text" class="form-control" style="border-radius: 5px 5px 5px 5px;" required>
                             </div>
 
                             <div class="mb-3">
-                                <label class="col-auto">Content</label>
+                                <label class="col-auto">Product Name</label>
                                 <!--                                <textarea name="Content"></textarea>-->
                                 <input name="ProductName" value='<%= res.getString("ProductName")%>' type="text" class="form-control" style="border-radius: 50px 50px 50px 50px;" required>
                             </div>

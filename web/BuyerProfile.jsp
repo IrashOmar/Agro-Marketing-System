@@ -75,7 +75,7 @@
                                     <div class="col-8">
                                         <h3 class="mb-0">My account</h3>
                                     </div>
-                               
+
                                 </div>
                             </div>
                             <div class="card-body">
@@ -189,24 +189,28 @@
                                                             <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about you ...">A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.</textarea>
                                                           </div>
                                                         </div>-->
-                                        
-                                        
-                                                  <div class="col-4 text-right">
-                                        <a href ='EditBuyer.jsp?u=<%=res.getString("buyId")%>' class="btn btn-sm btn-primary">Edit&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                                        
-                                        <a href="#!" class="btn btn-sm btn-primary">Log Out</a>
-                                    </div>
+
+
+                                        <div class="col-4 text-right">
+                                            <a href ='EditBuyer.jsp?u=<%=res.getString("buyId")%>' class="btn btn-sm btn-primary">Edit&nbsp;&nbsp;&nbsp;&nbsp;</a>
+
+                                            <a href="LoginBuyer.jsp" value="submit" class="btn btn-sm btn-primary">Log Out</a>
+                                        </div>
                                         <br><br>
-                                            <%
-                }
-            } catch (NullPointerException e) {
-                System.out.println("Error at detail: " + e.getStackTrace().toString());
-                e.printStackTrace();
-            }
-        %>
+                                        <%
+                                                }
+                                            
+                                                if (session.getAttribute("buyId") == null) {
+                                                    response.sendRedirect("ChooseRole.jsp");
+                                                }
+                                            } catch (NullPointerException e) {
+                                                System.out.println("Error at detail: " + e.getStackTrace().toString());
+                                                e.printStackTrace();
+                                            }
+                                        %>
                                         </form>
                                         </section>
-                                   
+
                                         <!--                    <div class="row gutters-sm">
                                                     <div class="col-md-4 mb-3">
                                                       <div class="card">
@@ -365,14 +369,13 @@
                                                 <div class="row">
                                                     <div class="col-lg-3">
                                                         <div class="widget">
-                                                            <h5 class="widgetheading">Our Contact</h5>
+                                                            <h5 class="widgetheading">Address</h5>
                                                             <address>
-                                                                <strong>Bistro company Inc</strong><br>
-                                                                JC Main Road, Near Silnile tower<br>
-                                                                Pin-21542 NewYork US.</address>
+                                                                <strong>Universiti Malaysia Terengganu Bangunan
+                                                                    FTTKI Jalan Gong Badak 21300 Terengganu.</address>
                                                             <p>
-                                                                <i class="icon-phone"></i> (123) 456-789 - 1255-12584 <br>
-                                                                <i class="icon-envelope-alt"></i> email@domainname.com
+
+
                                                             </p>
                                                         </div>
                                                     </div>
@@ -380,8 +383,7 @@
                                                         <div class="widget">
                                                             <h5 class="widgetheading">Quick Links</h5>
                                                             <ul class="link-list">
-                                                                <li><a href="#">Latest Events</a></li>
-                                                                <li><a href="#">Terms and conditions</a></li>
+
                                                                 <li><a href="#">Privacy policy</a></li>
                                                                 <li><a href="#">Career</a></li>
                                                                 <li><a href="#">Contact us</a></li>
@@ -392,19 +394,23 @@
                                                         <div class="widget">
                                                             <h5 class="widgetheading">Latest posts</h5>
                                                             <ul class="link-list">
-                                                                <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
-                                                                <li><a href="#">Pellentesque et pulvinar enim. Quisque at tempor ligula</a></li>
-                                                                <li><a href="#">Natus error sit voluptatem accusantium doloremque</a></li>
+                                                                <li><a href="#">Privacy policy</a></li>
+                                                                <li><a href="#">Career</a></li>
+                                                                <!--                                            <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                                                                                                            <li><a href="#">Pellentesque et pulvinar enim. Quisque at tempor ligula</a></li>
+                                                                                                            <li><a href="#">Natus error sit voluptatem accusantium doloremque</a></li>-->
                                                             </ul>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-3">
                                                         <div class="widget">
-                                                            <h5 class="widgetheading">Recent News</h5>
+                                                            <h5 class="widgetheading">Contact Us</h5>
                                                             <ul class="link-list">
-                                                                <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
-                                                                <li><a href="#">Pellentesque et pulvinar enim. Quisque at tempor ligula</a></li>
-                                                                <li><a href="#">Natus error sit voluptatem accusantium doloremque</a></li>
+                                                                <i class="icon-envelope-alt"></i> MyDusun@domainname.com
+                                                                <i class="icon-phone"></i> (123) 456-789 - 1255-12584 <br>
+                                                                <!--                                            <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                                                                                                            <li><a href="#">Pellentesque et pulvinar enim. Quisque at tempor ligula</a></li>
+                                                                                                            <li><a href="#">Natus error sit voluptatem accusantium doloremque</a></li>-->
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -416,7 +422,7 @@
                                                         <div class="col-lg-6">
                                                             <div class="copyright">
                                                                 <p>
-                                                                    <span>&copy; Touch Hospital Medical 2015 All right reserved. By </span><a href="http://webthemez.com" Bistro="_blank">WebThemez</a>
+                                                                    <!--                                                <span>&copy; Touch Hospital Medical 2015 All right reserved. By </span><a href="http://webthemez.com" Bistro="_blank">WebThemez</a>-->
                                                                 </p>
                                                             </div>
                                                         </div>

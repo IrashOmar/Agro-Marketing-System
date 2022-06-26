@@ -34,7 +34,7 @@
 
             <nav id="sidebar">
                 <div class="sidebar-header">
-                    <img src="../img/HajahRosnani_Logo.png" alt="logo" width="150" class="mx-2">
+                    <p>MyDusun.com</p>
                 </div>
 
                 <ul class="list-unstyled components">

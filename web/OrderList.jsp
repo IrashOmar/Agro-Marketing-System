@@ -120,7 +120,7 @@
                                         try {
                                             connection = DriverManager.getConnection(connectionUrl + dbName, userId, password);
                                             statement = connection.createStatement();
-                                            String sql = "SELECT cart2.cart_id, cart2.quantity, tree.ProductName,trybackend.Price FROM cart2 JOIN trybackend ON cart2.id = trybackend.id JOIN tree ON trybackend.tree_id = tree.tree_id";
+                                            String sql = "SELECT cart2.cart_id, cart2.quantity, tree.ProductName,trybackend.Price FROM cart2 JOIN trybackend ON cart2.id = trybackend.id JOIN tree ON trybackend.tree_id = tree.tree_id ";
 
                                             resultSet = statement.executeQuery(sql);
                                             while (resultSet.next()) {

@@ -33,6 +33,9 @@ String email = request.getParameter("email");
 String password = request.getParameter("password");
 String buyId = request.getParameter("buyId");
 
+response.setHeader("Cache-Control","no-cache, no-store, must-revalidate");
+//response.setHeader("Pragma", "no-cache");
+response.setHeader("Expires", "0");
 if((!(email.equals(null) || email.equals("")) && !(password.equals(null) || password.equals(""))))
 {
 try{
@@ -48,6 +51,8 @@ if(rs.next())
 userdbName = rs.getString("email");
 userdbPsw = rs.getString("password");
 buyId= rs.getString("buyId");
+
+ 
 if(email.equals(userdbName) && password.equals(userdbPsw))
 {
 session.setAttribute("email",userdbName);

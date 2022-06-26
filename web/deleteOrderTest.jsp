@@ -32,7 +32,7 @@
 //              ResultSet resultSet5 = null;
 
             stat = conn.createStatement();
-            String sql1 = "SELECT carttest2.farId, carttest2.TotalPrice,carttest2.cart_id,carttest2.quantity,trybackend2.id,trybackend2.Avail_quantity FROM carttest2 JOIN trybackend2 ON carttest2.id = trybackend2.id";
+            String sql1 = "SELECT carttest2.farId, carttest2.TotalPrice,carttest2.cart_id,carttest2.quantity,trybackend2.id,trybackend2.Avail_quantity FROM carttest2 JOIN trybackend2 ON carttest2.id = trybackend2.id WHERE carttest2.farId=" + session.getAttribute("farId");
             resultSet = stat.executeQuery(sql1);
             
             resultSet.next();

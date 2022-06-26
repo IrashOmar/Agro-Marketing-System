@@ -144,17 +144,17 @@ function CheckRole(val)
                                 </div>
                             </div>
                                 <div class="select-dropdown"></div>-->
-                            </div>
-                            
-                        </div>
-                        
+                       
 <!--                         <input class="input--style-4" type="file" name="role" id="role" style="display:none " placeholder="Upload Farm Certification">
                      -->
-                        <div class="p-t-15">
+                                   <div class="p-t-15">
+                                <label>
+                                    <a href="Terms&Regulations.pdf"> Agree terms and regulations  <input type="checkbox" checked="checked" name="remember" class="label"  required> </a> 
+                                </label>
+                           
+                            
                             <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
-                        </div>
-                    </form>
-                </div>
+                    </div>
 <!--            </div>
         </div>-->
     </div>

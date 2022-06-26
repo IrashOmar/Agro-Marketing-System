@@ -15,7 +15,7 @@
         <meta name="author" content="http://webthemez.com" />
         <!-- css -->
         <link href="css/bootstrap.min.css" rel="stylesheet" />
-        
+
         <link href="css/flexslider.css" rel="stylesheet" />
         <link href="css/style.css" rel="stylesheet" />
 
@@ -40,7 +40,7 @@
                             <!-- <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo"/></a> -->
                         </div>
                         <div class="navbar-collapse collapse ">
-                             <ul class="nav navbar-nav">
+                            <ul class="nav navbar-nav">
                                 <li class="active"><a href="FarmerMainPage.html">Home</a></li> 
                                 <!-- <li><a href="about.html">Available</a></li> -->
                                 <li><a href="post2.html">Post</a></li>
@@ -85,17 +85,17 @@
                                     Your message has been sent. Thank you!
                                 </div>
                             </div>
-                            
-                            <div class="contact-form">
-     
-                                <form action="UpdateTreeProgressProcess.jsp" method="post">
 
-<!--                                      <div class="form-group has-feedback">
-                                        <label for="Purchasement_Id">Purchasement Id*</label>
-                                        <input type="text" class="form-control" name="Purchasement_Id" placeholder="">
-                                        <i class=" form-control-feedback"></i>
-                                    </div>-->
-                                      <div class="form-group has-feedback">
+                            <div class="contact-form">
+
+                                <form action="index.html" method="post">
+
+                                    <!--                                      <div class="form-group has-feedback">
+                                                                            <label for="Purchasement_Id">Purchasement Id*</label>
+                                                                            <input type="text" class="form-control" name="Purchasement_Id" placeholder="">
+                                                                            <i class=" form-control-feedback"></i>
+                                                                        </div>-->
+                                    <div class="form-group has-feedback">
                                         <label for="FruitTree"> Address*</label>
                                         <input type="text" class="form-control" name="FruitTree" placeholder="">
                                         <i class=" form-control-feedback"></i>
@@ -116,40 +116,63 @@
                                         <i class=" form-control-feedback"></i>
                                     </div>
 
-<!--                                    <div class="form-group has-feedback">
-                                        <label for="Profit">Profit*</label>
-                                        <input type="text" class="form-control" name="Profit" placeholder="">
-                                        <i class=" form-control-feedback"></i>
-                                    </div>-->
-                   
+                                    <!--                                    <div class="form-group has-feedback">
+                                                                            <label for="Profit">Profit*</label>
+                                                                            <input type="text" class="form-control" name="Profit" placeholder="">
+                                                                            <i class=" form-control-feedback"></i>
+                                                                        </div>-->
+
                                     <div class="form-group has-feedback">
                                         <label for="Date"> Date*</label>
                                         <input type="text" class="form-control" name="Date" placeholder="">
                                         <i class=" form-control-feedback"></i>
-                                   
+                                        <br>
 
-                                    <input type="submit"class="submit btn btn-default">
-                                </form>
+                                        <div id="my_form">
+                                            <p></p>
+                                            <button id="nextStep" class="submit btn btn-default">Submit</button>
+                                        </div>
+
+                                        <div id="thank_you" style="display: none;">
+                                            <p>Your Details has been received.</p>
+                                            <button type="submit" class="submit btn btn-default">Close</button>
+                                        </div>
 
 
+<!--                                        <input type="submit"class="submit btn btn-default">-->
+                                        </form>
+                                <script>
+  var nextStep = document.querySelector('#nextStep');
+
+  nextStep.addEventListener('click', function (e) {
+    e.preventDefault();
+    // Hide first view
+    document.getElementById('my_form').style.display = 'none';
+
+    // Show thank you message element
+    document.getElementById('thank_you').style.display = 'block';
+  });
+</script>
+
+
+                                    </div>
                             </div>
-                        </div>
-                        <!--                        <h2>    Locate Your Farm</h2>-->
-                        <!--                        <div class="col-md-6">
-                                                    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script><div style="overflow:hidden;height:500px;width:600px;"><div id="gmap_canvas" style="height:500px;width:600px;"></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style><a class="google-map-code" href="http://www.trivoo.net" id="get-map-data">trivoo</a></div><script type="text/javascript"> function init_map() {
-                                       var myOptions = {zoom: 14, center: new google.maps.LatLng(40.805478, -73.96522499999998), mapTypeId: google.maps.MapTypeId.ROADMAP};
-                                       map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);
-                                       marker = new google.maps.Marker({map: map, position: new google.maps.LatLng(40.805478, -73.96522499999998)});
-                                       infowindow = new google.maps.InfoWindow({content: "<b>The Breslin</b><br/>2880 Broadway<br/> New York"});
-                                       google.maps.event.addListener(marker, "click", function () {
+                            <!--                        <h2>    Locate Your Farm</h2>-->
+                            <!--                        <div class="col-md-6">
+                                                        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script><div style="overflow:hidden;height:500px;width:600px;"><div id="gmap_canvas" style="height:500px;width:600px;"></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style><a class="google-map-code" href="http://www.trivoo.net" id="get-map-data">trivoo</a></div><script type="text/javascript"> function init_map() {
+                                           var myOptions = {zoom: 14, center: new google.maps.LatLng(40.805478, -73.96522499999998), mapTypeId: google.maps.MapTypeId.ROADMAP};
+                                           map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);
+                                           marker = new google.maps.Marker({map: map, position: new google.maps.LatLng(40.805478, -73.96522499999998)});
+                                           infowindow = new google.maps.InfoWindow({content: "<b>The Breslin</b><br/>2880 Broadway<br/> New York"});
+                                           google.maps.event.addListener(marker, "click", function () {
+                                               infowindow.open(map, marker);
+                                           });
                                            infowindow.open(map, marker);
-                                       });
-                                       infowindow.open(map, marker);
-                                   }
-                                   google.maps.event.addDomListener(window, 'load', init_map);</script>
-                                                </div>-->
+                                       }
+                                       google.maps.event.addDomListener(window, 'load', init_map);</script>
+                                                    </div>-->
+                        </div>
                     </div>
-                </div>
 
             </section>
             <footer>
@@ -157,14 +180,13 @@
                     <div class="row">
                         <div class="col-lg-3">
                             <div class="widget">
-                                <h5 class="widgetheading">Our Contact</h5>
+                                <h5 class="widgetheading">Address</h5>
                                 <address>
-                                    <strong>Bistro company Inc</strong><br>
-                                    JC Main Road, Near Silnile tower<br>
-                                    Pin-21542 NewYork US.</address>
+                                    <strong>Universiti Malaysia Terengganu Bangunan
+                                        FTTKI Jalan Gong Badak 21300 Terengganu.</address>
                                 <p>
-                                    <i class="icon-phone"></i> (123) 456-789 - 1255-12584 <br>
-                                    <i class="icon-envelope-alt"></i> email@domainname.com
+
+
                                 </p>
                             </div>
                         </div>
@@ -172,8 +194,7 @@
                             <div class="widget">
                                 <h5 class="widgetheading">Quick Links</h5>
                                 <ul class="link-list">
-                                    <li><a href="#">Latest Events</a></li>
-                                    <li><a href="#">Terms and conditions</a></li>
+
                                     <li><a href="#">Privacy policy</a></li>
                                     <li><a href="#">Career</a></li>
                                     <li><a href="#">Contact us</a></li>
@@ -184,19 +205,23 @@
                             <div class="widget">
                                 <h5 class="widgetheading">Latest posts</h5>
                                 <ul class="link-list">
-                                    <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
-                                    <li><a href="#">Pellentesque et pulvinar enim. Quisque at tempor ligula</a></li>
-                                    <li><a href="#">Natus error sit voluptatem accusantium doloremque</a></li>
+                                    <li><a href="#">Privacy policy</a></li>
+                                    <li><a href="#">Career</a></li>
+                                    <!--                                            <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                                                                                <li><a href="#">Pellentesque et pulvinar enim. Quisque at tempor ligula</a></li>
+                                                                                <li><a href="#">Natus error sit voluptatem accusantium doloremque</a></li>-->
                                 </ul>
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <div class="widget">
-                                <h5 class="widgetheading">Recent News</h5>
+                                <h5 class="widgetheading">Contact Us</h5>
                                 <ul class="link-list">
-                                    <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
-                                    <li><a href="#">Pellentesque et pulvinar enim. Quisque at tempor ligula</a></li>
-                                    <li><a href="#">Natus error sit voluptatem accusantium doloremque</a></li>
+                                    <i class="icon-envelope-alt"></i> MyDusun@domainname.com
+                                    <i class="icon-phone"></i> (123) 456-789 - 1255-12584 <br>
+                                    <!--                                            <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                                                                                <li><a href="#">Pellentesque et pulvinar enim. Quisque at tempor ligula</a></li>
+                                                                                <li><a href="#">Natus error sit voluptatem accusantium doloremque</a></li>-->
                                 </ul>
                             </div>
                         </div>
@@ -208,7 +233,7 @@
                             <div class="col-lg-6">
                                 <div class="copyright">
                                     <p>
-                                        <span>&copy; Touch Hospital Medical 2015 All right reserved. By </span><a href="http://webthemez.com" Bistro="_blank">WebThemez</a>
+                                        <!--                                                <span>&copy; Touch Hospital Medical 2015 All right reserved. By </span><a href="http://webthemez.com" Bistro="_blank">WebThemez</a>-->
                                     </p>
                                 </div>
                             </div>

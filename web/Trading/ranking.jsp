@@ -284,7 +284,7 @@
                                     <th class="border-0">Fruit Produced(kg)</th>
                                     <th class="border-0">Profit(RM)</th>
                                     <th class="border-0">Date</th>
-                                    <th class="border-0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Action</th>
+                                    <th class="border-0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Action</th>
 
                                 </tr>
 
@@ -301,8 +301,8 @@
                                     <td><%=res.getString("FruitProduced")%></td><!-- comment -->
                                     <td><%=res.getString("Profit")%></td>
                                     <td><%=res.getString("Date")%></td>
-                                    <td><a href ='../ExportDetails.jsp?progress_id=<%=res.getString("progress_id")%>'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Export</a><!-- comment -->
-                                        <a href='../deleteProgress.jsp?d=<%=res.getString("progress_id")%>'>Delete</a><!-- comment -->
+                                    <td><a href ='../ExportDetails.jsp?progress_id=<%=res.getString("progress_id")%>'>Export &nbsp;</a><!-- comment -->
+                                        <a href='../deleteProgress.jsp?d=<%=res.getString("progress_id")%>'>Sell Tree</a><!-- comment -->
                                     
 
 
@@ -322,3 +322,79 @@
                     </div>
                 </div>
             </div>
+                    
+                             <footer>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <div class="widget">
+                                        <h5 class="widgetheading">Address</h5>
+                                        <address>
+                                            <strong>Universiti Malaysia Terengganu Bangunan
+                                                FTTKI Jalan Gong Badak 21300 Terengganu.</address>
+                                        <p>
+                                            
+                                          
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="widget">
+                                        <h5 class="widgetheading">Quick Links</h5>
+                                        <ul class="link-list">
+                                            
+                                            <li><a href="#">Privacy policy</a></li>
+                                            <li><a href="#">Career</a></li>
+                                            <li><a href="#">Contact us</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="widget">
+                                        <h5 class="widgetheading">Latest posts</h5>
+                                        <ul class="link-list">
+                                            <li><a href="#">Privacy policy</a></li>
+                                            <li><a href="#">Career</a></li>
+<!--                                            <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                                            <li><a href="#">Pellentesque et pulvinar enim. Quisque at tempor ligula</a></li>
+                                            <li><a href="#">Natus error sit voluptatem accusantium doloremque</a></li>-->
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="widget">
+                                        <h5 class="widgetheading">Contact Us</h5>
+                                        <ul class="link-list">
+                                              <i class="icon-envelope-alt"></i> MyDusun@domainname.com
+                                              <i class="icon-phone"></i> (123) 456-789 - 1255-12584 <br>
+<!--                                            <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                                            <li><a href="#">Pellentesque et pulvinar enim. Quisque at tempor ligula</a></li>
+                                            <li><a href="#">Natus error sit voluptatem accusantium doloremque</a></li>-->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="sub-footer">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="copyright">
+                                            <p>
+<!--                                                <span>&copy; Touch Hospital Medical 2015 All right reserved. By </span><a href="http://webthemez.com" Bistro="_blank">WebThemez</a>-->
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <ul class="social-network">
+                                            <li><a href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href="#" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                                            <li><a href="#" data-placement="top" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                                            <li><a href="#" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+                                            <li><a href="#" data-placement="top" title="Google plus"><i class="fa fa-google-plus"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
