@@ -153,7 +153,7 @@
                                     <td>
                                         <!--                                         <label for="chu"></label>
                                                                                 <input type="checkbox" id="chu" checked="checked" name="remember"> -->
-                                    <a href='deleteCarttest2.jsp?h=<%=resultSet.getString("cart_id")%>' class="btn btn-warning">Accept</a>
+                                    <a href='deleteCarttest2.jsp?h=<%=resultSet.getString("cart_id")%>' class="btn btn-warning">Delete</a>
 
                                     </td>
                                 </tr>

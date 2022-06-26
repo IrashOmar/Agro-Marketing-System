@@ -11,6 +11,7 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -37,11 +38,10 @@ public class FileUploadServletTest extends HttpServlet {
         PrintWriter out = response.getWriter();
         String ProductName = request.getParameter("ProductName");
         String Category = request.getParameter("Category");
-        String FarmName = request.getParameter("FarmName");
-
+        String FarmName = request.getParameter("Name");
+        String Avail_quantity = request.getParameter("Avail_quantity");
         String Price = request.getParameter("Price");
-
-//        String Location = request.getParameter("Location");
+      String Location = request.getParameter("Location");
         String Experience = request.getParameter("Experience");
         Part part = request.getPart("file");
         String fileName = extractFileName(part);
@@ -53,20 +53,31 @@ public class FileUploadServletTest extends HttpServlet {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "admin");
-            PreparedStatement pst = con.prepareStatement("insert into trybackend2(tree_id,cat_id,farId,Price,Experience,filename,path) values (?,?,?,?,?,?,?)");
+            PreparedStatement pst2 = con.prepareStatement("select * from farmerregistrationtest where Name=?");
+            
+             int farId =0 ;
+            pst2.setString(1, FarmName);
+             // farId = resultSet1.getString("cart_id");
+            ResultSet rs = pst2.executeQuery();
+            while (rs.next()){
+                farId = rs.getInt("farId");
+            }
+            PreparedStatement pst = con.prepareStatement("insert into trybackend2(tree_id,cat_id,Name,farId,Avail_quantity,Price,Location,Experience,filename,path) values (?,?,?,?,?,?,?,?,?,?)");
             pst.setString(1, ProductName);
             pst.setString(2, Category);
             pst.setString(3, FarmName);
-            pst.setString(4, Price);
-//            pst.setString(5, Location);
-            pst.setString(5, Experience);
-            pst.setString(6, fileName);
-            pst.setString(7, savePath);
+               pst.setInt(4, farId);
+            pst.setString(5, Avail_quantity);
+            pst.setString(6, Price);
+            pst.setString(7, Location);
+            pst.setString(8, Experience);
+            pst.setString(9, fileName);
+            pst.setString(10, savePath);
             pst.executeUpdate();
             response.setContentType("text/html; charset=utf-8");
             out.println("<script type=\"text/javascript\">");
             out.println("alert(\"New Post Added!!\")");
-            out.println("window.open('post.html','_self')");
+            out.println("window.open('post2.html','_self')");
             out.println("</script >");;
 
         } catch (Exception e) {

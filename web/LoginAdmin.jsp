@@ -30,7 +30,7 @@ pageEncoding="ISO-8859-1"%>
           <div class="col-md-7">
             <div class="card-body">
               <div class="brand-wrapper">
-                <img src="assets/images/logo.svg" alt="logo" class="logo">
+<!--                <img src="assets/images/logo.svg" alt="logo" class="logo">-->
               </div>
                 
               <p class="login-card-description">Log into your account</p>

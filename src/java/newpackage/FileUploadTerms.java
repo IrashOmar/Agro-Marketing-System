@@ -79,7 +79,7 @@ public class FileUploadTerms extends HttpServlet {
                 if (status > 0) {
                     response.setContentType("text/html; charset=utf-8");
             out.println("<script type=\"text/javascript\">");
-            out.println("alert(\"Sucessfully Registered!!\")");
+            out.println("alert(\"Sucessfully added!!\")");
             out.println("window.open('adminTest.jsp','_self')");
             out.println("</script >");;
                     
